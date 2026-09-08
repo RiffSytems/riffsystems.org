@@ -1,3 +1,7 @@
+/* FORCE RIFF SYSTEMS LIGHT COLOR SCHEME */
+html {
+  color-scheme: only light;
+}
 :root{
   --bg:#f5f4ef;
   --surface:#ffffff;
@@ -837,9 +841,7 @@ h3{
 }
 
 
-/* SYMBOLIC TEMPORAL MARK
-   Static public design element only.
-   No countdown, endpoint, AIP duration, protocol window, or user-facing promise is encoded here. */
+/* LIVE UNLABELLED COUNTDOWN — visible numbers only; no explanatory copy. */
 .temporal-mark{
   width:min(calc(100% - 40px),var(--max));
   margin:-24px auto 34px;
@@ -857,5 +859,18 @@ h3{
   .temporal-mark{
     margin:-8px auto 26px;
     letter-spacing:.12em;
+  }
+}
+
+
+/* COUNTDOWN MOBILE FIT */
+.temporal-mark{
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
+@media(max-width:520px){
+  .temporal-mark{
+    font-size:.70rem;
+    letter-spacing:.075em;
   }
 }
