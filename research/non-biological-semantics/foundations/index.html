@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="light" name="color-scheme"/>
+<title>Non-Biological Semantics (NBS) — Riff Systems</title>
+<meta content="A proposed field-level research programme for studying artificial representational geometry, dynamics, functional relevance and human interpretability." name="description"/>
+
+<link href="https://riffsystems.org/research/non-biological-semantics/foundations/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Non-Biological Semantics (NBS)" property="og:title"/>
+<meta content="A proposed field-level research programme for studying artificial representational geometry, dynamics, functional relevance and human interpretability." property="og:description"/>
+<meta content="https://riffsystems.org/research/non-biological-semantics/foundations/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Non-Biological Semantics (NBS)" name="twitter:title"/>
+<meta content="A proposed field-level research programme for studying artificial representational geometry, dynamics, functional relevance and human interpretability." name="twitter:description"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Non-Biological Semantics (NBS)",
+  "author": {
+    "@type": "Person",
+    "name": "Tristan Radford",
+    "jobTitle": "Cross-Domain Cognitive Systems Architect"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Riff Systems Ltd",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "17419314"
+    }
+  },
+  "url": "https://riffsystems.org/research/non-biological-semantics/foundations/",
+  "mainEntityOfPage": "https://riffsystems.org/research/non-biological-semantics/foundations/",
+  "dateModified": "2026-09-07",
+  "version": "1.0",
+  "creativeWorkStatus": "Proposed field-level research programme",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Tristan J. Radford"
+  },
+  "copyrightYear": 2026
+}</script>
+<style>
+  /* ── Reset & base ─────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:        #1a1a1a;
+    --ink-soft:   #333333;
+    --muted:      #555555;
+    --rule:       #cccccc;
+    --rule-dark:  #999999;
+    --header-bg:  #f4f4f4;
+    --alt-row:    #fafafa;
+    --page-bg:    #e8e6e1;
+    --paper:      #ffffff;
+    --max-w:      720px;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "EB Garamond", "Georgia", "Times New Roman", serif;
+    background: var(--page-bg);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ── Paper container ──────────────────────────────────────── */
+  .page {
+    max-width: var(--max-w);
+    margin: 2.5rem auto;
+    padding: 3.25rem 3rem 2.75rem;
+    background: var(--paper);
+    box-shadow:
+      0 1px 3px rgba(0,0,0,0.04),
+      0 8px 28px rgba(0,0,0,0.07);
+    border-radius: 2px;
+  }
+
+  /* ── Title block ──────────────────────────────────────────── */
+  .title-block {
+    text-align: center;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 1.5px solid var(--rule-dark);
+  }
+
+  .title-block .top-rule {
+    border: none;
+    border-top: 0.5px solid var(--rule);
+    margin-bottom: 1.75rem;
+  }
+
+  h1 {
+    font-family: "Libre Baskerville", "Georgia", serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.55rem;
+  }
+
+  .subtitle {
+    font-family: "EB Garamond", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 1.1rem;
+  }
+
+  .meta {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .meta strong {
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+
+  /* ── Section headings ─────────────────────────────────────── */
+  h2 {
+    font-family: "Libre Baskerville", "Georgia", serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-top: 2.1rem;
+    margin-bottom: 0.65rem;
+    line-height: 1.35;
+  }
+
+  h3 {
+    font-family: "EB Garamond", serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-top: 1.35rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.35;
+  }
+
+  /* ── Body text ────────────────────────────────────────────── */
+  p {
+    font-size: 1.02rem;
+    line-height: 1.62;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  p strong {
+    font-weight: 600;
+  }
+
+  /* ── Lists ────────────────────────────────────────────────── */
+  ul, ol {
+    margin: 0.35rem 0 0.85rem 0;
+    padding-left: 1.35rem;
+  }
+
+  ul { list-style: none; padding-left: 0.15rem; }
+
+  ul li {
+    position: relative;
+    padding-left: 1.15rem;
+    margin-bottom: 0.28rem;
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+
+  ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--ink);
+  }
+
+  ol {
+    list-style: none;
+    counter-reset: item;
+    padding-left: 0.15rem;
+  }
+
+  ol li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.55rem;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    counter-increment: item;
+  }
+
+  ol li::before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+  }
+
+  ol li strong {
+    display: inline;
+  }
+
+  /* ── Tables ───────────────────────────────────────────────── */
+  .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1rem 0 1.35rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  th, td {
+    border: 0.5px solid var(--rule);
+    padding: 0.55rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background: var(--header-bg);
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  tr:nth-child(even) td {
+    background: var(--alt-row);
+  }
+
+  table {
+    border: 0.8px solid var(--rule-dark);
+  }
+
+  /* ── Diagram placeholder ──────────────────────────────────── */
+  .diagram-box {
+    margin: 1.25rem 0;
+    padding: 1rem 1.25rem;
+    border-top: 0.5px solid var(--rule);
+    border-bottom: 0.5px solid var(--rule);
+    text-align: center;
+  }
+
+  .diagram-box p {
+    font-style: italic;
+    font-size: 0.92rem;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 0.25rem;
+    line-height: 1.45;
+  }
+
+  .diagram-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── Footer ───────────────────────────────────────────────── */
+  .doc-footer {
+    margin-top: 2.5rem;
+    padding-top: 0.85rem;
+    border-top: 0.5px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-family: "EB Garamond", serif;
+  }
+
+  /* ── Print styles ─────────────────────────────────────────── */
+  @media print {
+    body { background: white; }
+    .page {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      max-width: none;
+      border-radius: 0;
+    }
+    h2 { page-break-after: avoid; }
+    h3 { page-break-after: avoid; }
+    table, .diagram-box { page-break-inside: avoid; }
+    .doc-footer { display: none; }
+  }
+
+  /* ── Responsive ───────────────────────────────────────────── */
+  @media (max-width: 740px) {
+    body { background: var(--paper); }
+
+    .page {
+      margin: 0;
+      padding: 1.75rem 1.35rem 2rem;
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+    }
+
+    h1 {
+      font-size: 1.35rem;
+    }
+
+    .subtitle {
+      font-size: 0.98rem;
+    }
+
+    h2 {
+      font-size: 1.12rem;
+      margin-top: 1.75rem;
+    }
+
+    h3 {
+      font-size: 1.02rem;
+    }
+
+    p, ul li, ol li {
+      font-size: 1rem;
+      text-align: left; /* justify can look awkward on narrow screens */
+    }
+
+    th, td {
+      padding: 0.45rem 0.5rem;
+      font-size: 0.88rem;
+    }
+
+    .title-block {
+      margin-bottom: 1.4rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .page {
+      padding: 1.4rem 1.1rem 1.75rem;
+    }
+
+    h1 { font-size: 1.22rem; }
+
+    /* Allow tables to scroll rather than crush */
+    .table-wrap {
+      margin-left: -0.25rem;
+      margin-right: -0.25rem;
+    }
+  }
+
+  /* Slightly larger type on wide screens for comfort */
+  @media (min-width: 900px) {
+    :root { --max-w: 740px; }
+    html { font-size: 17px; }
+  }
+
+
+  /* ── v1.1 citation & proposition styles ─────────────────── */
+  sup.cite { font-size: 0.72em; line-height: 0; }
+  sup.cite a { color: var(--muted); text-decoration: none; }
+  sup.cite a:hover { text-decoration: underline; }
+  .epistemic-note {
+    margin: 0.8rem 0 1rem;
+    padding: 0.65rem 0.8rem;
+    border-left: 2px solid var(--rule-dark);
+    background: var(--alt-row);
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+  .chain {
+    text-align: center;
+    margin: 1rem 0 1.25rem;
+    line-height: 1.55;
+  }
+  .chain strong { font-weight: 600; }
+  .references p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    text-align: left;
+    margin-bottom: 0.55rem;
+    padding-left: 1.55rem;
+    text-indent: -1.55rem;
+  }
+  .references a { color: inherit; }
+
+
+
+.publication-meta { margin-top: 1rem; color: var(--muted); }
+.publication-meta p { margin: .12rem 0; text-align: center; font-size: .93rem; line-height: 1.48; }
+.publication-meta strong { color: var(--ink-soft); font-weight: 600; }
+
+blockquote {
+  margin: 1rem 0 1.25rem;
+  padding: .8rem 1rem;
+  border-left: 2px solid var(--rule-dark);
+  background: var(--alt-row);
+}
+blockquote p { text-align: left; margin: 0; font-style: italic; }
+
+math[display="block"] {
+  display: block;
+  overflow-x: auto;
+  text-align: center;
+  margin: 1rem 0 1.2rem;
+  padding: .65rem .5rem;
+  border-top: .5px solid var(--rule);
+  border-bottom: .5px solid var(--rule);
+}
+
+.references p {
+  font-size: .9rem;
+  line-height: 1.48;
+  text-align: left;
+  margin-bottom: .62rem;
+  padding-left: 1.65rem;
+  text-indent: -1.65rem;
+}
+
+.legal-section {
+  margin-top: 2.8rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule-dark);
+}
+.legal-section h2 { margin-top: 0; }
+.legal-section h3 {
+  font-family: "Libre Baskerville", "Georgia", serif;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+}
+.rights-section { margin-top: 2.3rem; }
+
+
+
+/* APPROVED RIFF SYSTEMS PUBLICATION MARK */
+.publication-publisher-mark-link {
+  display: inline-block;
+  margin: 0 0 1rem;
+  text-decoration: none;
+}
+.publication-publisher-mark {
+  display: block;
+  width: 164px;
+  max-width: 42vw;
+  height: auto;
+  opacity: .78;
+  mix-blend-mode: multiply;
+}
+.title-block .publication-publisher-mark-link {
+  margin-left: auto;
+  margin-right: auto;
+}
+.report-header .publication-publisher-mark-link {
+  display: block;
+}
+@media (max-width: 560px) {
+  .publication-publisher-mark { width: 142px; }
+}
+</style>
+<link href="/favicon-bars.png" rel="icon" type="image/png"/><link rel="stylesheet" href="/assets/publication-fonts.css">
+</head>
+<body>
+<article class="page">
+<header class="title-block">
+<hr class="top-rule"/><a aria-label="Riff Systems" class="publication-publisher-mark-link" href="/"><img alt="Riff Systems" class="publication-publisher-mark" src="/assets/brand/riff-systems-logo-bars.png"/></a>
+<h1>NON-BIOLOGICAL SEMANTICS (NBS)</h1>
+<p class="subtitle">A proposed field-level research programme for the study of semantic organisation in artificial systems</p>
+<div class="publication-meta">
+<p><strong>Author:</strong> Tristan Radford — Cross-Domain Cognitive Systems Architect</p>
+<p><strong>Publisher:</strong> Riff Systems Ltd · Company No. 17419314</p>
+<p><strong>Version:</strong> 1.0  ·  <strong>Current revision:</strong> 7 September 2026</p>
+<p><strong>Status:</strong> Proposed field-level research programme</p>
+<p><strong>Canonical publication:</strong> riffsystems.org/research/non-biological-semantics/foundations/</p>
+</div>
+</header>
+<h2 id="abstract">Abstract</h2>
+<p>Artificial neural systems form high-dimensional internal
+representations that can exhibit stable geometric, statistical and
+task-relevant structure. Contemporary work in representation learning,
+computational linguistics and interpretability has shown that linguistic
+and semantic distinctions can sometimes be decoded from these
+representations, that representational geometry can vary systematically
+across layers and tasks, and that internal structure does not
+automatically imply causal use by the model. The scientific problem is
+therefore not simply whether artificial systems contain “meaning,” but
+how to distinguish measurable representational organisation, functional
+contribution to behaviour, dynamic change during processing, and the
+human interpretations placed on those measurements.<sup class="cite"><a href="#ref-1">[1]</a><a href="#ref-2">[2]</a><a href="#ref-3">[3]</a><a href="#ref-4">[4]</a><a href="#ref-5">[5]</a><a href="#ref-6">[6]</a></sup></p>
+<p>This paper proposes <strong>Non-Biological Semantics (NBS)</strong>
+as a <strong>field-level research programme</strong> for that problem.
+NBS is not presented as an already-established field, nor as a
+replacement for mechanistic interpretability, computational semantics,
+representation learning, information theory or cognitive science. Its
+present status is a testable and falsifiable research programme with
+<strong>discipline-level scope</strong> and <strong>field-level
+ambition</strong>: if the programme succeeds empirically, NBS aims to
+establish a future scientific discipline for the systematic study of
+artificial representational geometry, dynamics and human
+interpretability. It proposes a common architecture for relating three
+levels of analysis: a <strong>Representational Geometry Layer
+(RGL)</strong> for structural organisation, a <strong>Representational
+Dynamics Model (ReDyM)</strong> for changes in representation over time
+or computation, and an <strong>NBS Interpretive Interface
+(NBS-II)</strong> for translating validated measurements into
+human-interpretable descriptions.</p>
+<p>NBS uses <em>semantics</em> operationally. It does not assume
+consciousness, subjective meaning, intention or human-like
+understanding. A semantic claim is warranted only to the extent that a
+representational pattern can be related to defined distinctions in
+inputs, tasks, outputs or behaviour and survives appropriate controls.
+Stronger claims require stronger evidence: decodability is not
+equivalent to causal use, geometric separability is not equivalent to
+conceptual understanding, and an interpretable visualization is not
+itself an explanation of mechanism.</p>
+<p>The immediate scientific task of NBS is methodological: to develop
+testable ways of mapping artificial representational structure,
+measuring its dynamics, evaluating whether identified structure is
+functionally relevant, and constructing interfaces that expose those
+findings without overstating what they establish. Its broader ambition
+is field-building: if this programme produces a coherent body of
+reproducible methods, findings and unresolved questions that is not
+adequately organised by existing disciplinary boundaries, NBS aims to
+provide the basis for a future scientific field devoted to those
+problems.</p>
+<hr/>
+<h2 id="introduction-the-problem-of-artificial-semantic-organisation">1.
+Introduction: the problem of artificial semantic organisation</h2>
+<p>Modern artificial systems transform inputs through distributed,
+high-dimensional internal states. In language models, these states can
+contain information about lexical, syntactic, semantic and task-related
+properties, but the presence of decodable information does not by itself
+show how the model uses that information, whether the representation is
+stable across contexts, or whether a human description of it corresponds
+to the model’s operative mechanism.<sup class="cite"><a href="#ref-5">[5]</a><a href="#ref-6">[6]</a><a href="#ref-7">[7]</a><a href="#ref-8">[8]</a><a href="#ref-9">[9]</a></sup></p>
+<p>The central problem addressed by NBS is therefore:</p>
+<blockquote>
+<p><strong>How can the structure, transformation and functional
+relevance of artificial representations be measured and translated into
+human-interpretable form without confusing representation with
+consciousness, decodability with causality, or visualization with
+explanation?</strong></p>
+</blockquote>
+<p>This question is narrower and more defensible than the claim that
+artificial systems possess an inaccessible form of “meaning” in the
+human or phenomenological sense. NBS treats artificial semantics as an
+empirical target: structured relations among internal representations,
+task-relevant distinctions and observable behaviour.</p>
+<h3 id="working-definition">1.1 Working definition</h3>
+<p><strong>Non-Biological Semantics is a proposed field-level research
+programme for studying how artificial systems organise, transform and
+use representational structure that is systematically related to
+distinctions in inputs, tasks, outputs or behaviour.</strong></p>
+<p>The term <em>non-biological</em> specifies the substrate under
+investigation. It does not imply that biological and artificial
+representation are fundamentally incomparable, nor that artificial
+systems possess the same kinds of cognition or meaning as humans.</p>
+<h3 id="four-evidential-levels">1.2 Four evidential levels</h3>
+<p>NBS distinguishes four claims that are often blurred together:</p>
+<ol type="1">
+<li><strong>Sensitivity or association</strong> — a model state varies
+systematically with a defined feature.</li>
+<li><strong>Decodability or structure</strong> — information about the
+feature can be recovered from the representation using a specified
+analysis.</li>
+<li><strong>Functional relevance</strong> — intervention on the
+identified representation changes model behaviour in a manner predicted
+by the hypothesis.</li>
+<li><strong>Human interpretation</strong> — a description, projection or
+visualization makes the finding understandable to a person.</li>
+</ol>
+<p>These levels are related but not interchangeable. A successful probe
+may reveal decodable information without showing that the model uses it.
+A causal intervention may establish functional relevance without showing
+that the human label attached to the intervention exhaustively describes
+the underlying computation. An interface may be useful while remaining
+only a partial model of the system.</p>
+<hr/>
+<h2 id="position-relative-to-existing-fields">2. Position relative to
+existing fields</h2>
+<p>NBS does not begin from the premise that existing fields cannot study
+artificial meaning. Several established areas already address essential
+parts of the problem.<sup class="cite"><a href="#ref-5">[5]</a><a href="#ref-7">[7]</a><a href="#ref-10">[10]</a></sup></p>
+<p><strong>Representation learning</strong> studies how useful structure
+is encoded in learned spaces.<br/>
+<strong>Computational linguistics and computational semantics</strong>
+analyse linguistic and semantic structure in artificial models.<br/>
+<strong>Interpretability and mechanistic interpretability</strong>
+investigate internal features, components, circuits and causal
+mechanisms.<br/>
+<strong>Information-theoretic probing and diagnostic methods</strong>
+test what information can be recovered from representations.<br/>
+<strong>Cognitive and systems sciences</strong> provide mature concepts
+for representation, dynamics, control, stability and interpretation.</p>
+<p>The proposed contribution of NBS is <strong>integrative rather than
+exclusionary</strong>. It asks whether structural, dynamic and
+interpretive analyses can be linked within a common protocol while
+keeping their evidential status explicit. Its field-level claim is
+prospective rather than declarative: NBS proposes that these connected
+problems may justify a dedicated scientific discipline if the programme
+demonstrates sufficient empirical coherence, methodological
+distinctiveness and cumulative value.</p>
+<p>This positioning creates a clear novelty criterion: NBS should be
+judged not by whether geometry, dynamics, probing or interpretability
+are individually new, but by whether the combined architecture improves
+measurement, cross-method consistency, causal clarity and human
+interpretation relative to existing approaches. Discipline-level status
+would therefore have to be earned through a sustained body of work, not
+inferred from the breadth of the proposal alone.</p>
+<hr>
+<h2 id="the-three-layer-nbs-architecture">3. The three-layer NBS
+architecture</h2>
+<p>NBS organises the problem into three analytically distinct
+layers.</p>
+<p>The three layers are unified because none is sufficient on its own.
+<strong>Structure without dynamics is incomplete:</strong> a static
+geometry cannot show how representations transform, stabilise, diverge
+or switch during computation. <strong>Dynamics without structure is
+uninterpretable:</strong> trajectories have little explanatory value
+unless the representational space and the relations being traversed are
+defined. <strong>Interpretation without evidential discipline is
+misleading:</strong> a human-readable interface can create apparent
+understanding even when the underlying structural or causal claim is
+weak. NBS therefore treats geometry, dynamics and interface as mutually
+constraining levels of one research programme rather than as independent
+topics.</p>
+<h3 id="representational-geometry-layer-rgl-structure">3.1
+Representational Geometry Layer (RGL) — structure</h3>
+<p>The RGL describes the measurable organisation of model states in
+representational space.</p>
+<p>For a representation vector
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+in a layer or component of a model, relevant questions include:</p>
+<ul>
+<li>Which distinctions are linearly or non-linearly separable?</li>
+<li>Which distances or similarity relations remain stable across
+paraphrase, context or model scale?</li>
+<li>Are task-relevant features concentrated in identifiable subspaces or
+distributed across many dimensions?</li>
+<li>Does geometry change across layers, time steps, modalities or
+tasks?</li>
+<li>Are apparent clusters, directions or manifolds robust to the
+analysis method and control conditions?</li>
+</ul>
+<p>Possible measurements include representational similarity,
+dimensionality, local and global distance structure, subspace alignment,
+probe performance, information-theoretic quantities, cluster stability
+and geometry under controlled perturbation.<sup class="cite"><a href="#ref-1">[1]</a><a href="#ref-2">[2]</a><a href="#ref-3">[3]</a><a href="#ref-4">[4]</a><a href="#ref-5">[5]</a><a href="#ref-7">[7]</a><a href="#ref-8">[8]</a></sup></p>
+<p>The RGL does <strong>not</strong> assume that a geometric feature is
+a human concept merely because a human label predicts it. Geometry
+establishes structured organisation; semantic interpretation requires
+additional evidence.</p>
+<h3 id="representational-dynamics-model-redym-change">3.2
+Representational Dynamics Model (ReDyM) — change</h3>
+<p>The ReDyM concerns how representations change during computation,
+across context, under perturbation or over learning.</p>
+<p>A generic form is:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>T</mi><mrow><mo form="prefix" stretchy="true">(</mo><msub><mi>h</mi><mi>t</mi></msub><mo>,</mo><msub><mi>c</mi><mi>t</mi></msub><mo>,</mo><mi>θ</mi><mo form="postfix" stretchy="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+h_{t+1} = T(h_t, c_t, \theta)
+</annotation></semantics></math></p>
+<p>where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mi>t</mi></msub><annotation encoding="application/x-tex">h_t</annotation></semantics></math>
+is a current representational state,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>t</mi></msub><annotation encoding="application/x-tex">c_t</annotation></semantics></math>
+represents relevant context or input conditions,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>
+denotes the model parameters or other fixed system properties, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+is the transformation that produces the subsequent state.</p>
+<p>The empirical target is not a metaphorical “force” acting on meaning.
+It is a measurable trajectory or transformation. Candidate phenomena
+include:</p>
+<ul>
+<li><strong>representational drift</strong> — systematic change in
+encoding across time, context or learning;</li>
+<li><strong>representational conflict</strong> — incompatible or
+competing task-relevant structures identified under controlled
+conditions;</li>
+<li><strong>convergence or stabilization</strong> — reduction in
+representational variability toward a reproducible state or
+subspace;</li>
+<li><strong>trajectory switching</strong> — transitions between
+distinguishable representational regimes;</li>
+<li><strong>coupling</strong> — dependencies between representations
+across layers, components or modalities.</li>
+</ul>
+<p>Terms such as <em>attractor</em>, <em>equilibrium</em> or
+<em>collapse</em> should be used only when the relevant mathematical or
+dynamical criteria are actually demonstrated. NBS therefore replaces the
+earlier language of “semantic force,” “drift pressure,” and “paradox
+collapse” with operational descriptions unless stronger evidence
+warrants the dynamical terminology.</p>
+<h3 id="nbs-interpretive-interface-nbs-ii-human-interpretation">3.3 NBS
+Interpretive Interface (NBS-II) — human interpretation</h3>
+<p>The NBS-II is the human-facing layer. It translates validated
+structural or dynamic measurements into forms that can be inspected,
+compared and tested by people.</p>
+<p>An NBS-II might contain:</p>
+<ul>
+<li>low-dimensional projections with explicit distortion warnings;</li>
+<li>labelled directions or subspaces whose validation procedure is
+shown;</li>
+<li>trajectory views across prompts, tasks or model layers;</li>
+<li>uncertainty and confidence indicators;</li>
+<li>causal intervention results alongside correlational
+measurements;</li>
+<li>comparative views across models or checkpoints;</li>
+<li>provenance showing which analysis generated each claim.</li>
+</ul>
+<p>The NBS-II is not assumed to reveal a model’s “true thoughts.” Its
+purpose is to provide a disciplined interface to measurements. A valid
+NBS-II should preserve the distinction between what was observed, what
+was inferred, what was causally tested and what remains
+interpretive.</p>
+<hr/>
+<h2 id="from-meaning-to-operational-semantic-claims">4. From “meaning”
+to operational semantic claims</h2>
+<p>The strongest scientific risk in NBS is semantic inflation: treating
+any organised internal state as evidence of meaning in a rich
+philosophical sense.</p>
+<p>NBS therefore uses a graded operational vocabulary.</p>
+<h3 id="representational-structure">4.1 Representational structure</h3>
+<p>A pattern in model states that is statistically stable or recoverable
+under a declared analysis.</p>
+<h3 id="semantic-association">4.2 Semantic association</h3>
+<p>A representational structure that covaries with a defined semantic
+distinction, such as topic, entailment relation, semantic role,
+referential relation or task label.</p>
+<h3 id="functional-semantic-relevance">4.3 Functional semantic
+relevance</h3>
+<p>A representational structure whose controlled alteration produces a
+predicted change in behaviour while appropriate controls rule out
+simpler explanations.</p>
+<h3 id="human-interpretable-semantic-model">4.4 Human-interpretable
+semantic model</h3>
+<p>A human-readable description of representational structure whose
+fidelity can be evaluated against held-out observations and, where
+possible, causal interventions.</p>
+<p>This hierarchy prevents the word <em>meaning</em> from doing
+evidential work that has not been earned.</p>
+<hr/>
+<h2 id="core-research-questions">5. Core research questions</h2>
+<p>The NBS programme can be organised around six testable questions.</p>
+<h3 id="rq1-structural-organisation">RQ1 — Structural organisation</h3>
+<p>Do artificial systems contain reproducible representational
+geometries associated with defined semantic distinctions?</p>
+<h3 id="rq2-generalisation">RQ2 — Generalisation</h3>
+<p>Do those structures persist across paraphrases, datasets, model
+scales, architectures, checkpoints and task contexts, or are they local
+artefacts of a particular probe or dataset?</p>
+<h3 id="rq3-functional-relevance">RQ3 — Functional relevance</h3>
+<p>Are the identified structures causally involved in model behaviour,
+or are they merely decodable correlates?</p>
+<h3 id="rq4-dynamics">RQ4 — Dynamics</h3>
+<p>Do controlled semantic or task manipulations produce reproducible
+representational trajectories, transitions or convergence patterns?</p>
+<h3 id="rq5-cross-level-correspondence">RQ5 — Cross-level
+correspondence</h3>
+<p>Can geometric and dynamic measurements predict observable output
+behaviour better than simpler behavioural baselines?</p>
+<h3 id="rq6-interpretive-interface-quality">RQ6 — Interpretive interface
+quality</h3>
+<p>Can human-facing interfaces communicate validated internal structure
+in ways that improve prediction, diagnosis or intervention without
+increasing false confidence about model internals?</p>
+<hr/>
+<h2 id="a-minimum-empirical-protocol-for-nbs-claims">6. A minimum
+empirical protocol for NBS claims</h2>
+<p>A scientific NBS study should specify the claim before choosing the
+visualization that best supports it.</p>
+<h3 id="declare-the-target">6.1 Declare the target</h3>
+<p>Define the semantic distinction, behaviour or computational property
+under investigation.</p>
+<h3 id="freeze-the-representation-source">6.2 Freeze the representation
+source</h3>
+<p>Specify model, checkpoint, layer or component, prompt protocol,
+token-selection rule and any preprocessing before decisive analysis.</p>
+<h3 id="establish-a-structural-baseline">6.3 Establish a structural
+baseline</h3>
+<p>Measure whether the target is recoverable or geometrically
+distinguishable and compare against appropriate random, lexical,
+frequency, positional or task-specific controls.</p>
+<h3 id="test-robustness">6.4 Test robustness</h3>
+<p>Repeat under paraphrase, held-out data, alternative seeds,
+alternative probes and relevant distribution shifts.</p>
+<h3 id="separate-decodability-from-use">6.5 Separate decodability from
+use</h3>
+<p>Where a functional claim is made, perform an intervention or other
+causal test. Probe accuracy alone is insufficient.<sup class="cite"><a href="#ref-5">[5]</a><a href="#ref-6">[6]</a><a href="#ref-7">[7]</a><a href="#ref-8">[8]</a><a href="#ref-9">[9]</a></sup></p>
+<h3 id="analyse-dynamics-only-when-temporal-or-computational-order-matters">6.6
+Analyse dynamics only when temporal or computational order matters</h3>
+<p>If trajectories are claimed, define the state sequence and distance
+or transition metric before interpreting it.</p>
+<h3 id="validate-the-interface-independently">6.7 Validate the interface
+independently</h3>
+<p>If an NBS-II visualization or description is presented, test whether
+it improves human prediction, comparison or diagnosis on held-out cases.
+Visual plausibility is not sufficient.</p>
+<h3 id="preserve-negative-results">6.8 Preserve negative results</h3>
+<p>Failure to recover stable geometry, causal effects or cross-model
+generalisation is an informative result and should constrain the NBS
+claim rather than trigger post-hoc redefinition.</p>
+<hr/>
+<h2 id="candidate-empirical-programme">7. Candidate empirical
+programme</h2>
+<h3 id="geometry-study">7.1 Geometry study</h3>
+<p>Select a small number of semantic relations with externally defined
+labels. Compare representational geometry across multiple open-weight
+language models and layers. Test whether identified directions or
+subspaces replicate across paraphrase and held-out domains.</p>
+<p><strong>Pass condition:</strong> a structure replicates under
+predeclared similarity or decoding criteria and survives control
+features.<br/>
+<strong>Failure condition:</strong> the effect disappears under
+paraphrase, control variables or probe changes.</p>
+<h3 id="functional-intervention-study">7.2 Functional intervention
+study</h3>
+<p>For a replicated structure, intervene on the associated activations
+while using matched random-direction and magnitude controls.</p>
+<p><strong>Pass condition:</strong> intervention changes the predicted
+semantic or behavioural outcome more than matched controls and without
+indiscriminate degradation.<br/>
+<strong>Failure condition:</strong> intervention has no specific effect
+or produces broad nonspecific disruption.</p>
+<h3 id="representational-dynamics-study">7.3 Representational dynamics
+study</h3>
+<p>Construct controlled ambiguity, contradiction or competing-constraint
+tasks. Measure trajectories across layers or generation steps rather
+than inferring “tension” from output language.</p>
+<p><strong>Pass condition:</strong> predefined trajectory features
+distinguish conditions on held-out examples and replicate across model
+instances.<br/>
+<strong>Failure condition:</strong> apparent dynamics are not
+distinguishable from ordinary activation variability or prompt-specific
+artefacts.</p>
+<h3 id="interpretive-interface-study">7.4 Interpretive interface
+study</h3>
+<p>Build an NBS-II prototype displaying only measurements that have
+passed structural and, where relevant, causal validation. Compare expert
+performance with and without the interface.</p>
+<p><strong>Pass condition:</strong> the interface improves calibrated
+prediction or diagnosis while preserving uncertainty.<br/>
+<strong>Failure condition:</strong> it increases confidence without
+improving accuracy, or encourages unsupported mental-state
+attribution.</p>
+<hr/>
+<h2 id="falsifiability-and-failure-conditions">8. Falsifiability and
+failure conditions</h2>
+<p>NBS should be weakened, revised or rejected where its distinctive
+claims fail empirical tests.</p>
+<p>The programme would be substantially undermined if:</p>
+<ul>
+<li>purported semantic geometries do not replicate beyond individual
+datasets or probes;</li>
+<li>identified structures are dominated by superficial lexical or
+positional confounds;</li>
+<li>decodable features repeatedly fail causal relevance tests;</li>
+<li>proposed representational dynamics cannot be distinguished from
+generic activation change;</li>
+<li>cross-model comparisons require incompatible ad hoc
+definitions;</li>
+<li>human-facing interfaces systematically overstate mechanism or reduce
+calibration;</li>
+<li>the three-layer architecture provides no explanatory or
+methodological advantage over existing interpretability workflows.</li>
+</ul>
+<p>These are not peripheral limitations. They are explicit conditions
+under which NBS would fail to justify itself as a distinct field-level
+research programme or to support its longer-term claim to disciplinary
+status.</p>
+<hr/>
+<h2 id="applications-if-the-programme-succeeds">9. Applications if the
+programme succeeds</h2>
+<p>If the proposed architecture proves empirically useful, NBS could
+support several areas.</p>
+<h3 id="interpretability">9.1 Interpretability</h3>
+<p>Relating structural measurements to causal tests and clearly
+separating them in human-facing tools.</p>
+<h3 id="model-comparison">9.2 Model comparison</h3>
+<p>Comparing representational organisation across architectures,
+checkpoints, languages or modalities using common measurement
+protocols.</p>
+<h3 id="semantic-diagnostics">9.3 Semantic diagnostics</h3>
+<p>Detecting instability, shortcut representations, brittle separability
+or changes in task-relevant structure under distribution shift.</p>
+<h3 id="humanai-interaction">9.4 Human–AI interaction</h3>
+<p>Building interfaces that help users understand what internal
+measurements do and do not establish, reducing anthropomorphic
+overinterpretation.</p>
+<h3 id="safety-and-alignment-research">9.5 Safety and alignment
+research</h3>
+<p>Testing whether safety-relevant distinctions are merely decodable,
+reliably functionally represented, or manipulable without broad model
+degradation.</p>
+<h3 id="cognitive-comparison">9.6 Cognitive comparison</h3>
+<p>Providing carefully bounded points of comparison between biological
+and artificial representational systems without presuming equivalence of
+mechanism or experience.</p>
+<hr/>
+<h2 id="research-agenda">10. Research agenda</h2>
+<p>The immediate NBS research agenda is <strong>field-building and
+methodological rather than declarative</strong>. The programme is
+intended to test whether a sufficiently coherent empirical and
+conceptual territory exists to justify a future discipline, rather than
+assuming that status in advance.</p>
+<h3 id="phase-1-measurement-discipline">Phase 1 — Measurement
+discipline</h3>
+<ul>
+<li>define operational semantic targets;</li>
+<li>establish geometry and probing baselines;</li>
+<li>specify control conditions;</li>
+<li>distinguish association, decodability and causal use;</li>
+<li>establish cross-model replication procedures.</li>
+</ul>
+<h3 id="phase-2-dynamics">Phase 2 — Dynamics</h3>
+<ul>
+<li>define trajectory metrics;</li>
+<li>test controlled conflict and ambiguity conditions;</li>
+<li>distinguish drift, switching and convergence from generic activation
+variability;</li>
+<li>assess temporal and layer-wise reproducibility.</li>
+</ul>
+<h3 id="phase-3-interface">Phase 3 — Interface</h3>
+<ul>
+<li>build NBS-II prototypes;</li>
+<li>display provenance and uncertainty;</li>
+<li>test human calibration and prediction;</li>
+<li>measure whether interface explanations correspond to causal
+evidence.</li>
+</ul>
+<h3 id="phase-4-cross-domain-extension">Phase 4 — Cross-domain
+extension</h3>
+<ul>
+<li>test whether the architecture transfers beyond text-only language
+models;</li>
+<li>compare multimodal, agentic and other artificial systems;</li>
+<li>identify which constructs are architecture-specific and which
+generalise.</li>
+</ul>
+<hr/>
+<h2 id="non-claims">11. Non-claims</h2>
+<p>NBS does <strong>not</strong> presently claim that:</p>
+<ul>
+<li>artificial systems are conscious or sentient;</li>
+<li>internal vectors possess subjective meaning;</li>
+<li>geometrically separable states are equivalent to human
+concepts;</li>
+<li>a probe reveals the mechanism used by a model;</li>
+<li>a low-dimensional projection faithfully preserves all relevant
+high-dimensional structure;</li>
+<li>attractors, equilibria or dynamical “forces” exist unless
+demonstrated under appropriate criteria;</li>
+<li>the proposed NBS architecture is already empirically validated;</li>
+<li>NBS already constitutes an established scientific field or
+discipline;</li>
+<li>existing fields are unable to study these problems.</li>
+</ul>
+<p>These restrictions are part of the framework, not disclaimers added
+after the fact.</p>
+<hr/>
+<h2 id="conclusion-a-field-level-proposal-not-a-declaration-by-fiat">12.
+Conclusion: a field-level proposal, not a declaration by fiat</h2>
+<p>Artificial systems contain high-dimensional internal representations
+that can be studied structurally, dynamically and causally. Existing
+research already demonstrates that useful linguistic and semantic
+information can sometimes be recovered from representational geometry,
+while also showing that decodability, causal use and human
+interpretability must be carefully distinguished.</p>
+<p>Non-Biological Semantics is proposed as a <strong>field-level,
+testable research programme</strong> for connecting those levels of
+analysis. Its scope is intentionally discipline-sized, but its present
+status is not that of an established discipline. The programme is
+designed to determine whether a coherent, cumulative and empirically
+distinctive body of work can be built around these problems. Its central
+architecture is deliberately simple:</p>
+<p><strong>Representational Geometry Layer (RGL) —
+structure</strong><br/>
+<strong>Representational Dynamics Model (ReDyM) — change</strong><br/>
+<strong>NBS Interpretive Interface (NBS-II) — human
+interpretation</strong></p>
+<p>A compact heuristic is:</p>
+<blockquote>
+<p><strong>Structure as geometry; change as dynamics; interpretation as
+interface.</strong></p>
+</blockquote>
+<p>The value of NBS will not be established by naming a field into
+existence. It will depend on whether this architecture supports
+reproducible measurements, stronger causal tests, clearer distinctions
+between evidence and interpretation, and interfaces that improve
+understanding without manufacturing certainty. The field-level ambition
+is therefore conditional on the performance of the research
+programme.</p>
+<p>If those criteria are met across a sustained body of research, NBS
+aims to support the establishment and eventual recognition of a distinct
+scientific discipline for studying artificial representational geometry,
+dynamics and human interpretability. Until then, it should be understood
+as having <strong>discipline-level scope without discipline-level
+status</strong>. If the programme does not establish sufficient
+empirical or methodological distinctiveness, it should contract, merge
+with existing approaches, or be abandoned. That falsifiability is a
+requirement of the field proposal rather than a threat to it.</p>
+<hr/>
+<h2>References</h2><div class="references"><p id="ref-1">[1] Chang, T. A., Tu, Z., &amp; Bergen, B. K. (2022). <em>The Geometry of
+Multilingual Language Model Representations</em>. Proceedings of EMNLP
+2022, 119–136.</p><p id="ref-2">[2] Kriegeskorte, N., &amp; Wei, X.-X. (2021). <em>Neural tuning and
+representational geometry</em>. Nature Reviews Neuroscience, 22,
+703–718.</p><p id="ref-3">[3] Saglam, B., Kassianik, P., Nelson, B., Weerawardhena, S., Singer, Y.,
+&amp; Karbasi, A. (2025). <em>Large Language Models Encode Semantics and
+Alignment in Linearly Separable Representations</em>. Proceedings of
+IJCNLP-AACL 2025, 2282–2303.</p><p id="ref-4">[4] Tehenan, M. (2025). <em>Semantic Geometry of Sentence
+Embeddings</em>. Findings of EMNLP 2025, 11993–12004.</p><p id="ref-5">[5] Belinkov, Y. (2022). <em>Probing Classifiers: Promises, Shortcomings,
+and Advances</em>. Computational Linguistics, 48(1), 207–219.</p><p id="ref-6">[6] Ravichander, A., Belinkov, Y., &amp; Hovy, E. (2021). <em>Probing the
+Probing Paradigm: Does Probing Accuracy Entail Task Relevance?</em>
+Proceedings of EACL 2021.</p><p id="ref-7">[7] Pimentel, T., Valvoda, J., Maudslay, R. H., Zmigrod, R., Williams,
+A., &amp; Cotterell, R. (2020). <em>Information-Theoretic Probing for
+Linguistic Structure</em>. Proceedings of ACL 2020.</p><p id="ref-8">[8] Voita, E., &amp; Titov, I. (2020). <em>Information-Theoretic Probing
+with Minimum Description Length</em>. Proceedings of EMNLP 2020,
+183–196.</p><p id="ref-9">[9] Marro, R. (2026). <em>Compositional Meaning Representations in LLMs:
+a Critical Review of Probing Studies</em>. Proceedings of *SEM 2026,
+198–210.</p><p id="ref-10">[10] Pohl, S., Walker, E. Y., Barack, D. L., Lee, J., Denison, R. N.,
+Block, N., Meyniel, F., et al. (2026). <em>Clarifying the conceptual
+dimensions of representation in neuroscience</em>. Nature Reviews
+Neuroscience, 27, 357–372.</p></div>
+<section aria-labelledby="nbs-disclaimer" class="legal-section">
+<h2 id="nbs-disclaimer">Disclaimer &amp; Scope of Application</h2>
+<p>Non-Biological Semantics (NBS) is a proposed field-level research programme for the study of artificial representational geometry, representational dynamics, functional relevance, and human interpretability. It has discipline-level scope and field-level ambition, but it is not presently an established scientific field or discipline. Its longer-term claim to disciplinary status is conditional on the development of a coherent, reproducible, empirically distinctive body of research.</p>
+<p>NBS does not claim that artificial systems are conscious, sentient, subjectively meaningful, or cognitively equivalent to biological systems. The term <em>semantics</em> is used operationally to describe representational structure that can be systematically related to defined distinctions in inputs, tasks, outputs, or behaviour. Geometric separability, probe performance, visualisation, or decodability alone do not establish conceptual understanding, causal use, subjective meaning, or mechanism.</p>
+<p>The NBS architecture — <strong>Representational Geometry Layer (RGL), Representational Dynamics Model (ReDyM), and NBS Interpretive Interface (NBS-II)</strong> — is proposed as an analytical and methodological structure for connecting representation, change, causal relevance, and human interpretation. The existence, usefulness, and distinctiveness of this architecture remain empirical questions and should not be inferred from terminology or conceptual coherence alone.</p>
+<p>NBS explicitly permits negative outcomes. If proposed semantic geometries fail to replicate, identified structures prove non-causal, representational dynamics cannot be distinguished from generic activation change, interpretive interfaces reduce calibration, or the three-layer architecture provides no methodological advantage over existing approaches, the programme should be weakened, revised, merged with existing fields, or rejected.</p>
+</section>
+<section aria-labelledby="copyright-permitted-use" class="legal-section rights-section">
+<h2 id="copyright-permitted-use">Copyright &amp; Permitted Use</h2>
+<p>© 2026 Tristan J. Radford. All rights reserved.<br/>
+Published by <strong>Riff Systems Ltd</strong> (Company No. 17419314).</p>
+<p>This publication may be read, cited, quoted in reasonable extracts, discussed in academic contexts, and used for non-commercial research, provided that appropriate attribution and citation are given and the work is not misrepresented.</p>
+<h3>Commercial Use</h3>
+<p>Except where permitted by law, commercial reproduction, republication, adaptation of protected expression, incorporation of protected material into software, products or services, or use of substantial portions of this work for commercial AI or machine-learning training, fine-tuning, dataset construction, or similar commercial exploitation requires prior written permission from <strong>Riff Systems Ltd</strong>.</p>
+<h3>Rights Administration</h3>
+<p>Copyright remains with <strong>Tristan J. Radford</strong>. <strong>Riff Systems Ltd</strong> is the publisher and administers commercial licensing and permissions for this publication.</p>
+<p>Nothing in this notice limits statutory copyright exceptions or other uses permitted by applicable law. No permission is implied for use of Riff Systems trade marks, logos, confidential material, or unpublished research.</p>
+</section>
+<footer class="doc-footer">
+<span>NBS · Tristan Radford — Cross-Domain Cognitive Systems Architect · v1.0</span>
+<span>Riff Systems Ltd · riffsystems.org · © 2026 Tristan J. Radford</span>
+</footer>
+</hr></article>
+</body>
+</html>
