@@ -9,6 +9,7 @@
 
 <meta content="#f5f4ef" name="theme-color"/>
 <link href="https://riffsystems.org/" rel="canonical"/>
+<meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
 <!-- Open Graph -->
 <meta content="Riff Systems — Cross-Domain Research &amp; Systems Development" property="og:title"/>
 <meta content="Selected public research, frameworks, empirical studies and tools from Riff Systems, founded by Tristan J. Radford." property="og:description"/>
@@ -32,7 +33,7 @@
         "@id": "https://riffsystems.org/#organization"
       },
       "creator": {
-        "@id": "https://riffsystems.org/#person"
+        "@id": "https://riffsystems.org/about/#tristan-radford"
       }
     },
     {
@@ -42,7 +43,7 @@
       "url": "https://riffsystems.org/",
       "description": "Independent cross-domain research and systems development programme.",
       "founder": {
-        "@id": "https://riffsystems.org/#person"
+        "@id": "https://riffsystems.org/about/#tristan-radford"
       },
       "identifier": {
         "@type": "PropertyValue",
@@ -52,13 +53,13 @@
     },
     {
       "@type": "Person",
-      "@id": "https://riffsystems.org/#person",
+      "@id": "https://riffsystems.org/about/#tristan-radford",
       "name": "Tristan Radford",
       "jobTitle": "Cross-Domain Cognitive Systems Architect",
-      "url": "https://riffsystems.org/#about",
-      "affiliation": {
-        "@id": "https://riffsystems.org/#organization"
-      }
+      "url": "https://riffsystems.org/about/",
+      "description": "Independent researcher developing cross-domain behavioural frameworks, causal methods and empirical tests across cognition, adaptive systems, artificial representations and complex systems.",
+      "affiliation": {"@id": "https://riffsystems.org/#organization"},
+      "knowsAbout": ["complex systems", "adaptation and resilience", "AI interpretability", "cognition and behavioural regulation", "causal research methods", "human–AI interaction"]
     }
   ]
 }</script>
@@ -72,6 +73,7 @@
 <nav aria-label="Primary navigation" class="nav">
 <a href="/#work">Selected Work</a>
 <a href="/#research">Research</a>
+<a href="/topics/">Topics</a>
 <a href="/papers/">Papers</a>
 <a href="/#tools">Tools</a>
 <a href="/#collaborate">Collaborate</a>
@@ -136,6 +138,18 @@
 </div>
 </div>
 </section>
+<!-- RESEARCH TOPICS -->
+<section class="section" id="topics">
+<div class="wrap">
+<header class="section-head"><p class="eyebrow">Research Topics</p><h2>Start with the question, not the framework name.</h2><p>These gateways connect broader questions in established research areas to the relevant Riff Systems papers and empirical results.</p></header>
+<div class="topic-grid">
+<a class="topic-card" href="/topics/adaptation-resilience-complex-systems/"><span>01</span><h3>Adaptation, Resilience &amp; Complex Systems</h3><p>When does persistence, recovery or ecological memory support a stronger claim of adaptive modification?</p></a>
+<a class="topic-card" href="/topics/ai-representations-interpretability/"><span>02</span><h3>AI Representations &amp; Interpretability</h3><p>What can decodability, activation intervention and prospective interpretation each establish?</p></a>
+<a class="topic-card" href="/topics/cognition-stress-behavioural-regulation/"><span>03</span><h3>Cognition, Stress &amp; Behavioural Regulation</h3><p>How should cognitive load, offloading and stress-like instability be described without collapsing distinct mechanisms?</p></a>
+<a class="topic-card" href="/topics/cross-domain-causal-methods/"><span>04</span><h3>Cross-Domain Causal Methods</h3><p>Declared boundaries, frozen criteria, strong nulls, causal tests and preservation of negative results.</p></a>
+</div>
+</div>
+</section>
 <!-- SELECTED WORK -->
 <section class="section alt" id="work">
 <div class="wrap">
@@ -182,7 +196,7 @@
             Selected work on coherence, regulation, persistence, retained modification and
             adaptation across different substrates.
           </p>
-<a href="/frameworks/adaptive-coherence-framework/">Explore Adaptive Systems →</a>
+<a href="/frameworks/adaptive-coherence-framework/programme/">Explore Adaptive Systems →</a>
 </article>
 <article class="work-card">
 <span class="index">05</span>
@@ -261,7 +275,37 @@
 </header>
 <article class="research-feature">
 <div class="research-copy">
-<p class="tag">NEW · Empirical publication · NBS-001 / NBS-002</p>
+<p class="tag">NEW · Empirical publication · Forest F1</p>
+<h3>Testing Adaptive Modification in Forest Systems</h3>
+<p>
+            Forest F1 applies one frozen ACF classifier across six heterogeneous forest systems to test
+            whether apparent adaptation can be distinguished from resilience, ecological memory, retained
+            damage, filtering, ordinary recovery and continuing external forcing.
+          </p>
+<p>
+            The cases reached different evidential depths under the same six-gate sequence. No completed
+            case currently establishes forest-level adaptive modification, while one preregistered case
+            remains unexecuted because the decisive raw data are not publicly accessible.
+          </p>
+<div class="result-box">
+<p><strong>Current result</strong><br/>No completed case establishes forest-level adaptive modification.</p>
+<p><strong>Publication</strong><br/>Forest F1 · v1.0 · 4 October 2026 · interim results</p>
+</div>
+<p class="research-note">
+            The result is discriminative rather than simply negative: different forest systems stop at
+            different causal gates without changing the ACF ontology or evidential rules.
+          </p>
+</div>
+<div class="research-menu">
+<a href="/research/forest-f1/">Publication Edition</a>
+<a href="/frameworks/adaptive-coherence-framework/programme/">ACF Research Programme</a>
+<a href="/papers/">Papers</a>
+<a href="/#record">Research Record</a>
+</div>
+</article>
+<article class="research-feature">
+<div class="research-copy">
+<p class="tag">Recent empirical publication · NBS-001 / NBS-002</p>
 <h3>Testing Structural, Causal, and Interpretive Claims in Non-Biological Semantics</h3>
 <p>
             A controlled empirical NBS study tested whether a TRAIN-derived evaluative-valence direction
@@ -285,7 +329,7 @@
 </div>
 <div class="research-menu">
 <a href="/research/non-biological-semantics/testing-structural-causal-and-interpretive-claims/">Publication Edition</a>
-<a href="/research/non-biological-semantics/">NBS Research Programme</a>
+<a href="/research/non-biological-semantics/programme/">NBS Research Programme</a>
 <a href="/papers/">Papers</a>
 <a href="/#record">Research Record</a>
 </div>
@@ -322,14 +366,6 @@
 </article>
 <div class="programme-grid">
 <article>
-<p class="tag">Next preregistered test</p>
-<h3>Forest F1</h3>
-<p>
-            A distributed ecological systems test. Boundary, observables, nulls, retention criteria
-            and pass/fail conditions will be frozen before the decisive analysis.
-          </p>
-</article>
-<article>
 <p class="tag">Future independent test</p>
 <h3>Titan T2</h3>
 <p>
@@ -359,7 +395,7 @@
           developing frameworks and exploratory work are not confused.
         </p>
 </header>
-<div class="library"><article class="library-row"><div><p class="tag">Behavioural framework</p><h3>The Dual-Channel Cognitive Offloading System (DCCOS)</h3><p>A behavioural framework for presleep cognitive offloading and dream-state hyperprocessing in ADHD.</p></div><a href="/dccos/">Open →</a></article><article class="library-row"><div><p class="tag">Conceptual framework</p><h3>Adaptive Coherence Framework</h3><p>Definitive consolidated conceptual/formal paper.</p></div><a href="/frameworks/adaptive-coherence-framework/">Open →</a></article><article class="library-row"><div><p class="tag">Empirical test</p><h3>Testing Adaptive Modification in Titan's Atmosphere</h3><p>Titan T1 · atmosphere-only boundary.</p></div><a href="/research/titan-t1/">Open →</a></article><article class="library-row"><div><p class="tag">Conceptual paper</p><h3>Stress Without Stress</h3><p>Why AI Behaviour Under Load Can Resemble Human Cognitive Instability.</p></div><a href="/human-ai/stress-without-stress/">Open →</a></article><article class="library-row"><div><p class="tag">NEW · Empirical NBS study</p><h3>Testing Structural, Causal, and Interpretive Claims in Non-Biological Semantics</h3><p>NBS-001 / NBS-002 · controlled structural, causal and interpretation sequence.</p></div><a href="/research/non-biological-semantics/testing-structural-causal-and-interpretive-claims/">Open →</a></article><article class="library-row"><div><p class="tag">Foundational NBS paper</p><h3>Non-Biological Semantics (NBS)</h3><p>A proposed field-level research programme for the study of semantic organisation in artificial systems.</p></div><a href="/research/non-biological-semantics/foundations/">Open →</a></article></div>
+<div class="library"><article class="library-row"><div><p class="tag">NEW · Empirical ACF study</p><h3>Testing Adaptive Modification in Forest Systems</h3><p>Forest F1 · six-case empirical stress test · interim results.</p></div><a href="/research/forest-f1/">Open →</a></article><article class="library-row"><div><p class="tag">Behavioural framework</p><h3>The Dual-Channel Cognitive Offloading System (DCCOS)</h3><p>A behavioural framework for presleep cognitive offloading and dream-state hyperprocessing in ADHD.</p></div><a href="/dccos/">Open →</a></article><article class="library-row"><div><p class="tag">Foundational ACF framework</p><h3>The Adaptive Coherence Framework</h3><p>Definitive consolidated conceptual/formal paper.</p></div><a href="/frameworks/adaptive-coherence-framework/">Open →</a></article><article class="library-row"><div><p class="tag">Empirical test</p><h3>Testing Adaptive Modification in Titan's Atmosphere</h3><p>Titan T1 · atmosphere-only boundary.</p></div><a href="/research/titan-t1/">Open →</a></article><article class="library-row"><div><p class="tag">Conceptual paper</p><h3>Stress Without Stress</h3><p>Why AI Behaviour Under Load Can Resemble Human Cognitive Instability.</p></div><a href="/human-ai/stress-without-stress/">Open →</a></article><article class="library-row"><div><p class="tag">Empirical NBS study</p><h3>Testing Structural, Causal, and Interpretive Claims in Non-Biological Semantics</h3><p>NBS-001 / NBS-002 · controlled structural, causal and interpretation sequence.</p></div><a href="/research/non-biological-semantics/testing-structural-causal-and-interpretive-claims/">Open →</a></article><article class="library-row"><div><p class="tag">Foundational NBS paper</p><h3>Non-Biological Semantics (NBS)</h3><p>A proposed field-level research programme for the study of semantic organisation in artificial systems.</p></div><a href="/research/non-biological-semantics/">Open →</a></article></div>
 </div>
 </section>
 <!-- RESEARCH PRINCIPLES -->
@@ -445,8 +481,8 @@
           data access, computational modelling, research tooling and tightly scoped empirical studies.
         </p>
 <p>
-          I am particularly interested in partnerships that add specialist knowledge or infrastructure
-          without requiring the entire private research architecture to be disclosed.
+          I am particularly interested in partnerships that contribute specialist expertise, technical capability or infrastructure
+          through clearly defined areas of collaboration, while allowing the underlying private research architecture to remain protected.
         </p>
 <div class="actions">
 <a class="button primary" href="mailto:contact@riffsystems.org">Discuss Collaboration</a>
@@ -463,7 +499,7 @@
 <h2>Riff Systems</h2>
 <p class="title-line">Independent Cross-Domain Research &amp; Systems Development</p>
 </div>
-<div class="about-copy"><p><strong>Tristan Radford is a Cross-Domain Cognitive Systems Architect and independent researcher. His work develops behavioural frameworks, conceptual models and empirical tests across cognition, coherence and human–AI interaction. He is the author of the Riff Systems research library, including DCCOS, the Adaptive Coherence Framework, Non-Biological Semantics, Stress Without Stress and the Titan empirical-test series.</strong></p><a class="button secondary" href="/about/">Read the Full About Page →</a></div>
+<div class="about-copy"><p><strong>Tristan Radford is a Cross-Domain Cognitive Systems Architect and independent researcher. He develops behavioural frameworks, causal methods and empirical tests across cognition, adaptive systems, artificial representations and complex systems, using cross-domain comparison to separate superficially similar behaviours by their evidence and underlying mechanism.</strong></p><a class="button secondary" href="/about/">Read the Full About Page →</a></div>
 </div>
 </section>
 <section class="section alt" id="programme-faq">
@@ -479,7 +515,7 @@
 </article>
 <article>
 <h3>What empirical work is currently public?</h3>
-<p>Public empirical work now includes Titan T1 and the NBS-001 / NBS-002 controlled valence study. Forest F1 remains the next preregistered systems test and will be frozen before decisive analysis.</p>
+<p>Public empirical work now includes Titan T1, the NBS-001 / NBS-002 controlled valence study, and Forest F1, a six-case empirical stress test of the Adaptive Coherence Framework. Titan T2 remains a future independently specified test.</p>
 </article>
 <article>
 <h3>Is the Adaptive Coherence Framework the main focus?</h3>
@@ -495,6 +531,19 @@
 <p class="eyebrow">Public Research Record</p>
 <h2>Selected milestones</h2>
 </header>
+<article class="record">
+<div class="record-date">04 OCT 2026</div>
+<div>
+<h3>Forest F1 empirical stress test published</h3>
+<p>
+            Six heterogeneous forest systems were evaluated under one frozen ACF gate sequence.
+            No completed case currently establishes forest-level adaptive modification; different cases
+            stop at different evidential gates and one preregistered case remains unexecuted because
+            decisive raw data are not publicly accessible.
+          </p>
+<p class="status">PUBLISHED · INTERIM RESULTS · FOREST F1 v1.0</p>
+</div>
+</article>
 <article class="record">
 <div class="record-date">26 SEP 2026</div>
 <div>
@@ -516,17 +565,6 @@
             challenged with progressively stronger controls and rejected as evidence of adaptive modification.
           </p>
 <p class="status">COMPLETED · RESULT RECORDED · T1 FROZEN</p>
-</div>
-</article>
-<article class="record">
-<div class="record-date">NEXT</div>
-<div>
-<h3>Forest F1 preregistration</h3>
-<p>
-            The next empirical test will specify the forest system boundary, observables, strongest
-            conventional nulls, retention criteria and pass/fail rules before decisive analysis.
-          </p>
-<p class="status">PROTOCOL PREPARATION</p>
 </div>
 </article>
 <article class="record">
@@ -553,105 +591,5 @@
 <p class="legal-footer-links"><a href="/terms/">Terms of Use</a> · <a href="/privacy/">Privacy</a> · <a href="/contact/">Contact</a></p>
 </div>
 </footer>
-<script id="riff-countdown">
-(() => {
-  const el = document.querySelector('.temporal-mark');
-  if (!el) return;
-
-  // Public decorative countdown. No explanatory label or external event is encoded.
-  const TARGET_INSTANT = Date.parse('2033-11-17T00:00:00Z');
-  const TARGET = { year: 2033, month: 11, day: 17, hour: 0, minute: 0, second: 0 };
-
-  const formatter = new Intl.DateTimeFormat('en-GB', {
-    timeZone: 'Europe/London',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hourCycle: 'h23'
-  });
-
-  const pad = n => String(Math.max(0, n)).padStart(2, '0');
-
-  function londonParts(date) {
-    const out = {};
-    for (const part of formatter.formatToParts(date)) {
-      if (part.type !== 'literal') out[part.type] = Number(part.value);
-    }
-    return {
-      year: out.year,
-      month: out.month,
-      day: out.day,
-      hour: out.hour,
-      minute: out.minute,
-      second: out.second
-    };
-  }
-
-  function daysInMonth(year, month) {
-    return new Date(Date.UTC(year, month, 0)).getUTCDate();
-  }
-
-  function calendarDiff(now) {
-    if (Date.now() >= TARGET_INSTANT) {
-      return [0, 0, 0, 0, 0, 0];
-    }
-
-    const n = londonParts(now);
-    let ty = TARGET.year;
-    let tm = TARGET.month;
-    let td = TARGET.day;
-    let th = TARGET.hour;
-    let tmin = TARGET.minute;
-    let ts = TARGET.second;
-
-    let seconds = ts - n.second;
-    if (seconds < 0) {
-      seconds += 60;
-      tmin -= 1;
-    }
-
-    let minutes = tmin - n.minute;
-    if (minutes < 0) {
-      minutes += 60;
-      th -= 1;
-    }
-
-    let hours = th - n.hour;
-    if (hours < 0) {
-      hours += 24;
-      td -= 1;
-    }
-
-    let days = td - n.day;
-    while (days < 0) {
-      tm -= 1;
-      if (tm === 0) {
-        tm = 12;
-        ty -= 1;
-      }
-      days += daysInMonth(ty, tm);
-    }
-
-    let months = tm - n.month;
-    if (months < 0) {
-      months += 12;
-      ty -= 1;
-    }
-
-    const years = Math.max(0, ty - n.year);
-    return [years, months, days, hours, minutes, seconds];
-  }
-
-  function render() {
-    const [y, mo, d, h, mi, s] = calendarDiff(new Date());
-    el.textContent = [y, mo, d, h, mi, s].map(pad).join(' : ');
-  }
-
-  render();
-  setInterval(render, 1000);
-})();
-</script></body>
+<script src="/assets/js/riff-countdown.js" defer></script></body>
 </html>

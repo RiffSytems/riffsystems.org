@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="light" name="color-scheme"/>
+<title>Testing Adaptive Modification in Forest Systems — Riff Systems</title>
+<meta content="A six-case empirical stress test of whether the Adaptive Coherence Framework can distinguish forest-level adaptive modification from resilience, ecological memory, retained damage, filtering, and continuing forcing." name="description"/>
+<link href="https://riffsystems.org/research/forest-f1/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Testing Adaptive Modification in Forest Systems" property="og:title"/>
+<meta content="A six-case empirical stress test of whether the Adaptive Coherence Framework can distinguish forest-level adaptive modification from resilience, ecological memory, retained damage, filtering, and continuing forcing." property="og:description"/>
+<meta content="https://riffsystems.org/research/forest-f1/" property="og:url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Testing Adaptive Modification in Forest Systems" name="twitter:title"/>
+<meta content="A six-case empirical stress test of whether the Adaptive Coherence Framework can distinguish forest-level adaptive modification from resilience, ecological memory, retained damage, filtering, and continuing forcing." name="twitter:description"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Testing Adaptive Modification in Forest Systems",
+  "alternativeHeadline": "Forest F1 — A six-case empirical stress test of the Adaptive Coherence Framework",
+  "author": {
+    "@type": "Person",
+    "name": "Tristan Radford",
+    "jobTitle": "Cross-Domain Cognitive Systems Architect"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Riff Systems Ltd",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "17419314"
+    }
+  },
+  "url": "https://riffsystems.org/research/forest-f1/",
+  "mainEntityOfPage": "https://riffsystems.org/research/forest-f1/",
+  "datePublished": "2026-10-04",
+  "version": "1.0",
+  "creativeWorkStatus": "Empirical stress test — interim results",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Tristan J. Radford"
+  },
+  "copyrightYear": 2026
+}</script>
+<style>
+*{box-sizing:border-box}
+:root{
+  --paper:#fff;--bg:#e8e6e1;--ink:#1a1a1a;--ink-soft:#333;--muted:#5a5a5a;
+  --rule:#cececa;--rule-dark:#949491;--accent:#294e70;--wash:#f5f6f6;
+}
+html{font-size:16px;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"EB Garamond",Georgia,"Times New Roman",serif;line-height:1.58;-webkit-font-smoothing:antialiased}
+.report{width:min(calc(100% - 34px),980px);margin:2.5rem auto 5rem;background:var(--paper);box-shadow:0 8px 28px rgba(0,0,0,.07)}
+.report-header{padding:3.4rem 4.5rem 2.4rem;border-bottom:1px solid var(--rule)}
+.kicker{margin:0 0 .75rem;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+h1,h2{font-family:"Libre Baskerville",Georgia,serif;color:var(--ink)}
+h1{font-size:clamp(2.35rem,5vw,4.3rem);line-height:1.08;letter-spacing:-.025em;margin:.25rem 0 .75rem;max-width:850px}
+.subtitle{font-size:1.28rem;font-style:italic;color:var(--muted);max-width:790px;margin:0 0 1.5rem}
+.meta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.15rem;margin-top:1.7rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-size:.94rem;color:var(--muted)}
+.meta-grid strong{display:block;color:var(--ink-soft);font-weight:600;margin-bottom:.1rem}
+.manuscript-line{margin:1rem 0 0;font-size:.9rem;color:var(--muted)}
+.classification{margin:1.5rem 0 0;padding:1rem 1.15rem;border-left:3px solid var(--accent);background:var(--wash);font-size:1rem;line-height:1.55}
+.report-body{max-width:790px;margin:0 auto;padding:3.1rem 0 4rem}
+.report-body h2{font-size:1.38rem;line-height:1.35;margin:2.75rem 0 .8rem;padding-top:.2rem}
+.report-body h3{font-size:1.12rem;line-height:1.4;margin:1.8rem 0 .55rem;color:var(--ink-soft);font-weight:600}
+.report-body p,.report-body li{font-size:1.035rem;line-height:1.67}
+.report-body p{margin:.2rem 0 .85rem;text-align:left}
+.report-body ul,.report-body ol{padding-left:1.45rem;margin:.5rem 0 1.2rem}
+.report-body li{margin:.25rem 0}
+.source-callout{margin:1.35rem 0;padding:1rem 1.1rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:#fafaf8}
+.source-callout p:last-child{margin-bottom:0}
+.formula{overflow-x:auto;padding:.8rem 1rem;border:1px solid var(--rule);background:#f7f7f5;font-family:"EB Garamond",Georgia,serif;font-weight:600}
+.publication-table-wrap{overflow-x:auto;margin:1.3rem 0 1.8rem}
+.publication-table{width:100%;border-collapse:collapse;font-family:"EB Garamond",Georgia,serif;font-size:.94rem;line-height:1.42;border:.8px solid var(--rule-dark)}
+.publication-table th,.publication-table td{padding:.55rem .65rem;border:.5px solid var(--rule);vertical-align:top;text-align:left}
+.publication-table th{background:#f0f1ef;font-weight:600}.publication-table tbody tr:nth-child(even) td{background:#fafafa}
+.legal-section{margin-top:3.2rem;padding-top:1.3rem;border-top:1.5px solid var(--rule-dark)}
+.legal-section h2{margin-top:0}.legal-section h3{font-family:"Libre Baskerville",Georgia,serif;font-size:1rem;margin-top:1.25rem}
+.rights-section{margin-top:2.5rem}
+.report-footer{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;padding:1.3rem 4.5rem 1.6rem;border-top:1px solid var(--rule);font-size:.86rem;color:var(--muted)}
+.report-footer span:last-child{text-align:right}
+@media(max-width:820px){.report{width:100%;margin:0;box-shadow:none}.report-header{padding:2.4rem 1.35rem 1.8rem}.report-body{max-width:none;padding:2.4rem 1.35rem 3rem}.meta-grid{grid-template-columns:1fr 1fr}.report-footer{padding:1.2rem 1.35rem;flex-direction:column}.report-footer span:last-child{text-align:left}}
+@media(max-width:520px){.meta-grid{grid-template-columns:1fr}h1{font-size:2.15rem}.subtitle{font-size:1.1rem}}
+@media print{body{background:white}.report{width:100%;margin:0;box-shadow:none}.report-header{padding:0 0 1.4rem}.report-body{max-width:none;padding:1.6rem 0}.report-footer{display:none}.publication-table,.source-callout{page-break-inside:avoid}h2,h3{page-break-after:avoid}}
+
+
+/* APPROVED RIFF SYSTEMS PUBLICATION MARK */
+.publication-publisher-mark-link {
+  display: inline-block;
+  margin: 0 0 1rem;
+  text-decoration: none;
+}
+.publication-publisher-mark {
+  display: block;
+  width: 164px;
+  max-width: 42vw;
+  height: auto;
+  opacity: .78;
+  mix-blend-mode: multiply;
+}
+.title-block .publication-publisher-mark-link {
+  margin-left: auto;
+  margin-right: auto;
+}
+.report-header .publication-publisher-mark-link {
+  display: block;
+}
+@media (max-width: 560px) {
+  .publication-publisher-mark { width: 142px; }
+}
+</style>
+<link href="/favicon-bars.png" rel="icon" type="image/png"/><link rel="stylesheet" href="/assets/publication-fonts.css">
+</head>
+<body>
+<main class="report">
+
+<header class="report-header"><a aria-label="Riff Systems" class="publication-publisher-mark-link" href="/"><img alt="Riff Systems" class="publication-publisher-mark" src="/assets/brand/riff-systems-logo-bars.png"/></a>
+<p class="kicker">FOREST F1 | SIX-CASE EMPIRICAL STRESS TEST</p>
+<h1>Testing Adaptive Modification<br/>in Forest Systems</h1>
+<p class="subtitle">A six-case empirical stress test of the Adaptive Coherence Framework</p>
+<div class="meta-grid">
+<div><strong>Author</strong>Tristan Radford — Cross-Domain Cognitive Systems Architect</div>
+<div><strong>Publisher</strong>Riff Systems Ltd · Company No. 17419314</div>
+<div><strong>Version</strong>1.0</div>
+<div><strong>Date</strong>4 October 2026</div>
+<div><strong>Status</strong>Empirical stress test · interim results</div>
+<div><strong>Canonical publication</strong>riffsystems.org/research/forest-f1/</div>
+</div>
+<p class="manuscript-line">Research manuscript • Forest F1 v1.0 • 4 October 2026</p>
+<div class="classification"><strong>Stress-test result</strong><br/>Across six forest systems, the same frozen ACF classifier separated superficially adaptive signatures into different causal outcomes and stopped different cases at different gates without changing its ontology or evidential rules. No completed case yet establishes forest-level adaptive modification; one preregistered case remains unexecuted because decisive raw data are not publicly accessible.</div>
+</header>
+<article class="report-body">
+<h2 id="abstract">Abstract</h2>
+<p>Forest F1 is a six-case empirical stress test of whether the Adaptive Coherence Framework (ACF) can distinguish forest-level adaptive modification from ecological phenomena that closely resemble it. Six heterogeneous forest systems were selected to challenge distinct sources of false-positive adaptive classification. The programme asks whether retained ecological reorganisation causally changes later system response under pressure, or whether the observed behaviour is better explained by conventional ecological processes such as mortality filtering, competition release, residual mechanical damage, ordinary recovery, species sorting, continuing external forcing, or constituent-level responses.</p>
+<p>The six anchors are: long-term throughfall exclusion at Caxiuanã followed by the 2023 El Niño drought (F1-C); repeated prescribed fire in Oregon ponderosa pine followed by insect disturbance (F1-F); the Hubbard Brook repeated ice-storm experiment (F1-I); the Harvard Forest simulated hurricane (F1-H); Amazon forest fragmentation followed by the 1997 El Niño drought (F1-FR); and long-duration elevated CO₂ at BIFoR FACE followed by extreme heat (F1-CO₂). A common six-gate sequence was frozen: organisational modification (G1), retention (G2), altered later response (G3), survival of the strongest conventional null (G4), causal contribution of retained organisation (G5), and correct forest-system locus (G6). Adaptive gain is evaluated only after all six gates pass.</p>
+<p>The stress test produced a differentiated result rather than a single generic failure. Caxiuanã shows a clear altered 2023 drought response but cannot identify a forest-level adaptive mechanism beyond passive restructuring and altered water availability per surviving biomass. Hubbard Brook reaches retained structural change and altered matched re-exposure response but does not defeat the residual-damage null. Harvard shows persistent reorganisation and functional resilience over decades but lacks a defensible independent later pressure-response test. BDFFP fragmentation shows long-retained ecological reorganisation but does not establish a differential incremental mortality response to the 1997 drought. BIFoR shows altered heat performance after prolonged CO₂ enrichment, but independent retention is not established because elevated CO₂ remains active during the heat event. The Blue Mountains repeated-fire case remains preregistered but unexecuted because the decisive mortality and stand-structure data have not been located in publicly accessible raw form. No completed case yet satisfies the full ACF criterion for forest-level adaptive modification.</p>
+<p>The programme therefore provides a discriminability result rather than a positive forest-adaptation claim. Its primary contribution is methodological: ecological memory, resilience, history dependence, persistent structural change, altered later performance, retained damage, filtering, and continuing forcing can be empirically separated from the stronger ACF criterion of retained adaptive modification without changing the framework's core ontology across cases.</p>
+<div class="source-callout"><p><strong>Central stress-test result</strong></p><p>Forest F1 showed that resilience, long-lived reorganisation, history dependence, altered later performance, retained damage, filtering, and chronic acclimation can produce superficially adaptive signatures for different causal reasons. The same frozen ACF classifier distinguished those outcomes without weakening its rules. No completed case yet satisfies the full forest-level adaptive-modification criterion.</p></div>
+<div class="source-callout"><p><strong>Programme status</strong></p><p>Forest F1 anchor selection and common gate architecture are closed for v1.0. Future raw-data upgrades may strengthen or revise individual case classifications, but they should be treated as explicit reopenings or replications rather than silent modification of the present record.</p></div>
+
+<h2 id="research-question">1. Research question and status</h2>
+<p>Forest F1 does not ask whether forests are alive, resilient, complex, or capable of constituent-level biological adaptation. Its question is narrower:</p>
+<p class="formula"><strong>Does a declared forest system retain a modification of response-generating organisation that causally changes its later response under relevant pressure?</strong></p>
+<p>The ACF adaptive discriminator is:</p>
+<p class="formula"><strong>Δθ ≠ 0 ∧ M &gt; 0 ∧ ΔF ≠ 0</strong></p>
+<p>Here θ denotes response-generating organisational state, Δθ a modification of that state, M retention of the modification, and ΔF an alteration of subsequent response behaviour. Forest F1 adds explicit requirements that the apparent ΔF survive the strongest conventional ecological null, that retained θ make a defensible causal contribution to the altered response, and that the modification reside at the declared forest-system locus rather than solely in constituent organisms.</p>
+<p>This programme is a <strong>secondary/confirmatory ACF reanalysis</strong>. Several ecological outcomes in the source literature were already known. The methodological contribution lies in freezing the ACF operationalisation, null hierarchy, gate sequence, and classification rules before decisive ACF interpretation, not in claiming outcome-blind preregistration of the original ecological experiments.</p>
+
+<h2 id="common-protocol">2. Frozen common protocol</h2>
+<h3 id="system-boundary">2.1 System boundary</h3>
+<p>Each case declares the smallest forest region whose internal components participate in integrated coherence-maintaining organisation and whose later responses are evaluated as a forest-system outcome. Adjacent control plots, experimental apparatus, regional climate, externally imposed drought, icing, fire, atmospheric CO₂ enrichment, and other exogenous drivers remain outside the focal boundary unless explicitly declared otherwise.</p>
+<h3 id="coherence">2.2 Coherence</h3>
+<p class="formula"><strong>C = [C<sub>s</sub>, C<sub>f</sub>, C<sub>i</sub>]</strong></p>
+<p>C<sub>s</sub> denotes structural coherence, C<sub>f</sub> functional coherence, and C<sub>i</sub> identity coherence. Coherence is kept distinct from θ. No convenient scalar coherence score was fitted after inspection of the case outcomes.</p>
+<h3 id="gates">2.3 Gate sequence</h3>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>Gate</th><th>Requirement</th><th>Failure interpretation</th></tr></thead><tbody>
+<tr><td>G1</td><td>Δθ ≠ 0</td><td>No organisational modification established.</td></tr>
+<tr><td>G2</td><td>M(t,τ) &gt; 0</td><td>Modification is transient or not independently retained.</td></tr>
+<tr><td>G3</td><td>ΔF ≠ 0 under later relevant pressure</td><td>Retained reorganisation does not establish altered later response.</td></tr>
+<tr><td>G4</td><td>ΔF survives strongest conventional null</td><td>History dependence is adequately explained by ordinary ecological or physical processes.</td></tr>
+<tr><td>G5</td><td>Retained θ causally contributes to ΔF</td><td>Association or prediction is insufficient for adaptive modification.</td></tr>
+<tr><td>G6</td><td>Locus = declared forest system</td><td>Constituent adaptation or filtering does not establish adaptation by the containing forest.</td></tr>
+</tbody></table></div>
+<p>Only after all six gates pass is adaptive gain eligible:</p>
+<p class="formula"><strong>G<sub>A</sub>(k) = E[C(t+k) | θ<sub>new</sub>, X₀, P] − E[C(t+k) | θ<sub>old</sub>, X₀, P]</strong></p>
+<p>No fractional or “near-adaptive” classification is used. Evidential depth and final classification remain distinct.</p>
+
+<h2 id="cases">3. Six-case design</h2>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>Case</th><th>Initiating history P₀</th><th>Later pressure P₁</th><th>Primary adversarial discriminator</th></tr></thead><tbody>
+<tr><td>F1-C</td><td>Long-term throughfall exclusion</td><td>2023 El Niño drought</td><td>Adaptive modification vs mortality filtering / competition release</td></tr>
+<tr><td>F1-F</td><td>Repeated prescribed fire</td><td>Pine butterfly / western pine beetle disturbance</td><td>Adaptive modification vs fire-driven structural filtering</td></tr>
+<tr><td>F1-I</td><td>First 12.7 mm experimental icing</td><td>Second matched 12.7 mm icing</td><td>Adaptive modification vs retained mechanical damage</td></tr>
+<tr><td>F1-H</td><td>1990 simulated hurricane</td><td>No verified independent P₁</td><td>Adaptive modification vs resilience / latent regenerative capacity</td></tr>
+<tr><td>F1-FR</td><td>Forest fragmentation / edge creation</td><td>1997 El Niño drought</td><td>Adaptive modification vs boundary effects / constituent sorting</td></tr>
+<tr><td>F1-CO₂</td><td>Long-duration elevated CO₂</td><td>Extreme heat &gt;32 °C</td><td>Retained modification vs continuing current forcing</td></tr>
+</tbody></table></div>
+
+<h2 id="f1c">4. F1-C — Caxiuanã chronic drought</h2>
+<p>The F1-C focal system is the one-hectare ESECAFLOR throughfall-exclusion forest stand; the adjacent one-hectare control is a comparator rather than part of the focal system. The long-term treatment diverts approximately half of throughfall and had operated for more than two decades before the 2023 El Niño drought. The primary later-response analysis used sapflow normalised to a frozen pre-drought baseline and evaluated the drought interval from 23 June through 29 November 2023.</p>
+<h3 id="f1c-execution">4.1 Minimum-data execution</h3>
+<p>The public sapflow dataset contained 13,453 rows from 40 trees. After the exact rolling-median normalisation used in the source analysis, 13,293 usable normalised observations remained. The treatment-blind pre-drought robust response scale was 0.1091. During the frozen drought interval, 5,170 observations from 39 trees across 160 dates were available.</p>
+<p>The matched-date median TFE-minus-control response was 0.2392. Overall drought medians were approximately 0.763 in the control and 0.871 in the throughfall-exclusion stand. On 77.5% of matched drought dates, the treatment advantage exceeded the frozen positive baseline-noise bound. A descriptive later-response difference is therefore established.</p>
+<h3 id="f1c-null">4.2 Strongest conventional null</h3>
+<p>The frozen null was:</p>
+<p class="formula"><strong>P₀ → mortality / lower biomass → lower competition and water demand → greater water per surviving biomass → altered 2023 response</strong></p>
+<p>Blocked-time cross-validation yielded RMSE ≈ 0.3291 for the current-state model, 0.3238 after adding treatment history, 0.3227 after adding the water-per-biomass null, and 0.3207 when residual treatment history was reintroduced. The incremental history advantage beyond the passive structural null was only about 0.60%, while treatment history, plot identity, and retained structural state remained strongly confounded in a one-treatment/one-control design.</p>
+<p>During the drought, mean biomass was approximately 256.59 MgC ha⁻¹ in the control and 165.95 MgC ha⁻¹ in the TFE stand. Mean water per unit biomass was higher in the TFE despite lower absolute soil water. These observations are directly compatible with passive competition-release and filtering mechanisms.</p>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>F1-C gate</th><th>Status</th></tr></thead><tbody>
+<tr><td>G1</td><td>Full forest-level test unavailable in the public minimum package</td></tr>
+<tr><td>G2</td><td>Partial</td></tr>
+<tr><td>G3</td><td><strong>Pass — descriptive altered later response</strong></td></tr>
+<tr><td>G4</td><td><strong>Not passed / non-identifiable</strong></td></tr>
+<tr><td>G5</td><td>Not established</td></tr>
+<tr><td>G6</td><td>Not established</td></tr>
+</tbody></table></div>
+<p><strong>F1-C-MIN classification:</strong> Long-term drought history is associated with a clear altered response to the 2023 El Niño drought, but forest-level adaptive modification is not established. The public minimum data do not causally separate retained adaptive organisation from drought-driven restructuring, reduced biomass, and altered water availability per surviving biomass.</p>
+
+<h2 id="f1f">5. F1-F — Blue Mountains repeated fire</h2>
+<p>The Blue Mountains experiment provides six previously thinned ponderosa-pine stands, each containing an unburned control and four season × interval prescribed-fire treatments: spring 5-year, spring 15-year, fall 5-year, and fall 15-year. Burning began in fall 1997 and spring 1998. Mortality was assessed annually from 2002 to 2017 across a severe pine-butterfly defoliation episode and a later western-pine-beetle outbreak.</p>
+<p>The design is particularly valuable because the independent unit is the stand × treatment combination rather than individual trees, giving genuine stand-level replication. The frozen strongest null is fire-driven restructuring: repeated fire may reduce density, competition, fuels, and host structure, so improved later survival need not imply modification of a forest-level response rule.</p>
+<p>The decisive raw stand × treatment × tree mortality and retained-structure dataset has not been located in publicly accessible form. Published treatment effects are therefore not substituted for the frozen raw-data test.</p>
+<p><strong>F1-F classification:</strong> preregistered but unexecuted because decisive raw data are presently inaccessible. This is neither a positive nor a negative adaptive result.</p>
+
+<h2 id="f1i">6. F1-I — Hubbard Brook repeated ice storm</h2>
+<p>The Hubbard Brook Ice Storm Experiment used ten 20 × 30 m plots across five icing treatments with two replicate plots per treatment. The primary F1-I branch uses a 12.7 mm radial-ice treatment followed by a second matched 12.7 mm treatment in the following winter. This creates a rare ecological re-exposure design in which P₀ and P₁ are closely matched.</p>
+<h3 id="f1i-retention">6.1 Retained organisational change</h3>
+<p>Published canopy measurements in the repeated-moderate treatment show substantial reorganisation between the pretreatment state and the interval before the second icing: LAI declined from approximately 6.1 to 4.6, gap-light index rose from about 2.7 to 5.9, and canopy rugosity rose from about 10.3 m to 14.9 m. The first two gates therefore pass at the published-summary level.</p>
+<h3 id="f1i-response">6.2 Matched later response and damage null</h3>
+<p>The repeated 12.7 mm treatment generated a substantially larger woody-debris response during the second icing than during the first. The central mechanistic problem is that the experimental literature itself reports that branches damaged in the first year could remain suspended in the canopy and then fall during the second icing. Thus:</p>
+<p class="formula"><strong>P₀ → partially damaged/weakened branches → P₁ → greater debris fall</strong></p>
+<p>is a sufficient conventional explanation. The observed history dependence is real, but it need not reflect retained adaptive modification of response-generating forest organisation.</p>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>F1-I gate</th><th>Status</th></tr></thead><tbody>
+<tr><td>G1</td><td><strong>Pass</strong></td></tr>
+<tr><td>G2</td><td><strong>Pass</strong></td></tr>
+<tr><td>G3</td><td><strong>Pass</strong></td></tr>
+<tr><td>G4</td><td><strong>Not passed — residual mechanical damage remains sufficient</strong></td></tr>
+<tr><td>G5</td><td>Not established</td></tr>
+<tr><td>G6</td><td>Not established</td></tr>
+</tbody></table></div>
+<p><strong>F1-I classification:</strong> retained disturbance-induced forest reorganisation with altered response under matched re-exposure; adaptive modification is not established because residual mechanical damage and cumulative vulnerability remain sufficient conventional explanations. A worse second response is not labelled maladaptation because adaptive modification itself has not passed.</p>
+
+<h2 id="f1h">7. F1-H — Harvard simulated hurricane</h2>
+<p>In 1990, Harvard Forest initiated a large hurricane simulation in a 0.8-ha pulldown area with a 0.6-ha control in a maturing New England forest. The manipulation damaged approximately 80% of canopy trees and roughly two-thirds of trees ≥5 cm DBH. Longitudinal measurements track survival, sprouting, recruitment, basal area, and composition.</p>
+<p>Twenty years later, only about 31% of the original ≥5 cm trees remained alive in the pulldown, recruitment had replenished tree numbers, pulldown basal area remained around 78% of its pre-manipulation value, and cohort and compositional structure remained substantially altered. At the same time, functional measures such as leaf area and litterfall recovered more rapidly than stand structure. Forest function and forest organisation therefore followed different recovery trajectories.</p>
+<p>These observations establish persistent organisational reconfiguration and retention at approximately a 20-year horizon. However, no later Tom Swamp pressure-response event has been verified that satisfies the frozen G3 requirement. Recovery after the original hurricane cannot be redefined as later re-exposure.</p>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>F1-H gate</th><th>Status</th></tr></thead><tbody>
+<tr><td>G1</td><td><strong>Pass</strong></td></tr>
+<tr><td>G2</td><td><strong>Pass at ~20 years</strong></td></tr>
+<tr><td>G3</td><td><strong>Untestable under the verified record</strong></td></tr>
+<tr><td>G4–G6</td><td>Ineligible / incomplete</td></tr>
+</tbody></table></div>
+<p><strong>F1-H classification:</strong> persistent hurricane-induced forest reorganisation with strong functional resilience; adaptive modification is not established because altered response to an independent later pressure has not been demonstrated.</p>
+
+<h2 id="f1fr">8. F1-FR — BDFFP fragmentation and 1997 El Niño</h2>
+<p>The Biological Dynamics of Forest Fragments Project began before isolation of experimental forest reserves in the early 1980s, providing pretreatment and long-term post-fragmentation observations. Fragmentation altered mortality, recruitment, size structure, pioneer abundance, community composition, biomass, and edge architecture for more than a decade before the 1997 El Niño drought.</p>
+<h3 id="f1fr-response">8.1 Drought-response interaction</h3>
+<p>The 1997 drought analysis used 23 permanent one-hectare plots and compared annualised mortality during baseline, drought, and post-drought intervals. Published annual mortality rose from approximately 2.44% to 2.93% at forest edges and from 1.13% to 1.91% in interiors. The drought-associated increments were therefore +0.49 and +0.78 percentage points respectively, a difference-in-differences of approximately −0.29 percentage points.</p>
+<p>The published analysis reported no significant edge-versus-interior difference in the magnitude of the drought-related mortality increase (P = 0.51). This is not treated as proof of equivalence because no frozen equivalence margin is available from the historical summary. The correct ACF result is that altered incremental response is <strong>not established</strong>.</p>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>F1-FR gate</th><th>Status</th></tr></thead><tbody>
+<tr><td>G1</td><td><strong>Pass</strong></td></tr>
+<tr><td>G2</td><td><strong>Pass</strong></td></tr>
+<tr><td>G3</td><td><strong>Not established</strong></td></tr>
+<tr><td>G4–G6</td><td>Ineligible / incomplete</td></tr>
+</tbody></table></div>
+<p><strong>F1-FR classification:</strong> long-term fragmentation produced substantial retained forest reorganisation, but the available 1997 El Niño evidence does not establish that the retained state altered the forest's incremental mortality response to drought. Forest-level adaptive modification is therefore not established.</p>
+
+<h2 id="f1co2">9. F1-CO₂ — BIFoR FACE chronic CO₂ and extreme heat</h2>
+<p>BIFoR FACE uses three elevated-CO₂ arrays and three ambient infrastructure-control arrays in mature deciduous woodland. Elevated arrays receive approximately +150 ppm CO₂ during the growing season. The primary later pressure is naturally occurring extreme heat above 32 °C after approximately eight years of enrichment.</p>
+<p>During heat events, elevated-CO₂-grown mature oaks showed approximately +33% intrinsic water-use efficiency, +26.1% net photosynthesis, and −11.1% stomatal conductance relative to ambient controls. This is a real treatment-conditioned later-response difference.</p>
+<p>The decisive ACF problem is that elevated CO₂ remained active during the heat event. Thus the observable causal structure is:</p>
+<p class="formula"><strong>current elevated CO₂ + heat → altered physiological response</strong></p>
+<p>rather than the required retained-history structure:</p>
+<p class="formula"><strong>past elevated CO₂ → Δθ → M → later heat → ΔF</strong></p>
+<p>Eight years of continued treatment does not itself establish retention independent of current forcing. A post-enrichment common-CO₂ period or another causal design separating history from current CO₂ would be required.</p>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>F1-CO₂ gate</th><th>Status</th></tr></thead><tbody>
+<tr><td>G1</td><td>Possible; requires organisational rather than instantaneous physiological evidence</td></tr>
+<tr><td>G2</td><td><strong>Not independently established</strong></td></tr>
+<tr><td>G3</td><td>Descriptive treatment difference only</td></tr>
+<tr><td>G4–G6</td><td>Ineligible / incomplete</td></tr>
+</tbody></table></div>
+<p><strong>F1-CO₂ classification:</strong> long-duration CO₂-conditioned forest regulation/acclimation with altered response during extreme heat; retained adaptive modification is not established because the initiating forcing remains active during the later response.</p>
+
+<h2 id="matrix">10. Consolidated Forest F1 gate matrix</h2>
+<div class="publication-table-wrap"><table class="publication-table" style="width:100%;"><thead><tr><th>Case</th><th>G1</th><th>G2</th><th>G3</th><th>G4</th><th>G5</th><th>G6</th><th>Interim classification</th></tr></thead><tbody>
+<tr><td>F1-C</td><td>Full forest test unavailable</td><td>Partial</td><td><strong>Pass</strong></td><td>Not passed / NI</td><td>Not established</td><td>Not established</td><td>Adaptive modification not established</td></tr>
+<tr><td>F1-F</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Unexecuted — data access</td></tr>
+<tr><td>F1-I</td><td><strong>Pass</strong></td><td><strong>Pass</strong></td><td><strong>Pass</strong></td><td><strong>Not passed</strong></td><td>Not established</td><td>Not established</td><td>Adaptive modification not established</td></tr>
+<tr><td>F1-H</td><td><strong>Pass</strong></td><td><strong>Pass</strong></td><td>Untestable</td><td>—</td><td>—</td><td>Incomplete</td><td>Adaptive modification not established</td></tr>
+<tr><td>F1-FR</td><td><strong>Pass</strong></td><td><strong>Pass</strong></td><td>Not established</td><td>—</td><td>—</td><td>Incomplete</td><td>Adaptive modification not established</td></tr>
+<tr><td>F1-CO₂</td><td>Possible</td><td><strong>Not established</strong></td><td>Descriptive only</td><td>—</td><td>—</td><td>Incomplete</td><td>Adaptive modification not established</td></tr>
+</tbody></table></div>
+<p><strong>NI = non-identifiable under the available data and design.</strong></p>
+
+<h2 id="evidential-depth">11. Evidential depth is not classificatory proximity</h2>
+<p>The six cases reach different depths in the same causal sequence. F1-CO₂ stops primarily at independent retention. F1-H establishes modification and long retention but lacks a valid later re-exposure. F1-FR establishes persistent reorganisation but not a differentiated incremental drought response. F1-C shows a clear later-response difference but does not causally identify adaptive forest-level modification beyond passive restructuring. F1-I reaches retained state plus matched altered re-exposure but does not defeat the stored-damage explanation. F1-F has the strongest replicated potential for a full causal test but remains unexecuted.</p>
+<p>These positions are not a ranking from “less adaptive” to “more adaptive.” They describe evidential depth. The ontology does not contain fractional adaptation.</p>
+
+<h2 id="cross-case">12. Cross-case findings</h2>
+<p>Forest F1 identifies at least five empirically distinct mechanisms capable of producing adaptation-like observations without establishing adaptive modification.</p>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>Apparent adaptive signature</th><th>Forest F1 counterexample</th><th>Why it is insufficient</th></tr></thead><tbody>
+<tr><td>Long-duration treatment response</td><td>F1-CO₂</td><td>Current forcing remains active; retention independent of P₀ is not established.</td></tr>
+<tr><td>Strong resilience and recovery</td><td>F1-H</td><td>Recovery from P₀ is not a later re-exposure response.</td></tr>
+<tr><td>Persistent ecological reorganisation</td><td>F1-FR</td><td>Δθ + M does not establish altered later response.</td></tr>
+<tr><td>Improved later performance</td><td>F1-C</td><td>Mortality filtering and competition release can generate the response without identified adaptive modification.</td></tr>
+<tr><td>Memory + matched re-exposure + altered response</td><td>F1-I</td><td>Retained physical damage can generate history dependence without adaptive causal organisation.</td></tr>
+</tbody></table></div>
+<p>The programme therefore supports a useful empirical distinction:</p>
+<p class="formula"><strong>ecological memory / resilience / history dependence ≠ ACF adaptive modification</strong></p>
+<p>unless the full causal chain is established.</p>
+
+<h2 id="interpretation">13. Interpretation</h2>
+<p>The negative and incomplete results should not be interpreted as evidence that forests are not alive, that forest-level adaptation is impossible, or that constituent organisms do not adapt. The result concerns a stricter evidential question: whether the available data identify retained modification of a forest-system response-generating organisation that causally changes later system response.</p>
+<p>That distinction matters because living forests contain many mechanisms that can create persistence and apparent memory: tree acclimation, mortality, recruitment, demographic turnover, species sorting, resource storage, damaged structures, changing competitive environments, and externally maintained forcing. A forest may clearly be a living ecological system while a particular dataset remains unable to isolate adaptation by the forest as a higher-level causal locus.</p>
+<p>The most important methodological observation is that the framework did not require a new ontology for drought, fire, ice damage, hurricane, fragmentation, or CO₂ enrichment. Boundary, θ, retention, ΔF, null competition, causal attribution, and locus remained usable across all six cases. The measurement models changed; the adaptive definition did not.</p>
+
+<h2 id="titan-comparison">14. Relation to Titan T1</h2>
+<p>Titan T1 provides a non-biological comparator. Titan generated persistent atmospheric organisation, history dependence, and an intermediate prior-state predictive signal, but the signal failed the strongest seasonal/circulation null. Forest F1 contains richer biological mechanisms and stronger forms of retained structural reorganisation, yet no completed case currently passes the full forest-level causal chain.</p>
+<p>The cross-domain comparison therefore supports a methodological principle: a biological substrate should not receive a weaker evidential standard merely because adaptation is intuitively more plausible. Conversely, a non-biological substrate should not be excluded a priori if future evidence were to satisfy the same causal requirements.</p>
+
+<h2 id="limitations">15. Limitations</h2>
+<ul>
+<li>Forest F1 is a secondary/confirmatory ACF reanalysis programme rather than a set of newly randomised experiments designed specifically for ACF.</li>
+<li>Several cases rely partly on published summaries because complete raw datasets are unavailable or currently access-restricted.</li>
+<li>F1-C has only one treatment forest and one control forest; constituent-level replication does not create forest-level treatment replication.</li>
+<li>F1-I has only two replicate plots per treatment and its current ACF result is published-summary rather than raw-data execution.</li>
+<li>F1-H has strong longitudinal evidence for Δθ and retention but no verified independent later pressure-response event.</li>
+<li>F1-FR does not provide an equivalence test for the edge-versus-interior drought increment, so “not established” must not be rewritten as “equal.”</li>
+<li>F1-CO₂ cannot identify independent retention while elevated CO₂ remains active during the heat response.</li>
+<li>F1-F remains unexecuted because the decisive raw dataset has not been located in publicly accessible form.</li>
+<li>No independent evaluator or external replication has yet reapplied the frozen ACF classifier to these case packets.</li>
+</ul>
+
+<h2 id="reopening">16. Reopening conditions</h2>
+<p>Individual cases may be reopened without changing the ACF ontology when materially stronger evidence becomes available.</p>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>Case</th><th>Material reopening evidence</th></tr></thead><tbody>
+<tr><td>F1-C</td><td>Full TLS/PAVD, long-term mortality/density, and pre-2023 structural trajectories sufficient to identify retained forest-level θ.</td></tr>
+<tr><td>F1-F</td><td>Full mortality and stand-structure dataset across treatment units and disturbance years.</td></tr>
+<tr><td>F1-I</td><td>Raw woody-debris and canopy-structure tables sufficient to execute the frozen residual-damage null.</td></tr>
+<tr><td>F1-H</td><td>A directly co-located independent later pressure-response event with treatment/control measurements.</td></tr>
+<tr><td>F1-FR</td><td>Raw 1997 mortality data supporting a predefined uncertainty/equivalence analysis and causal retained-organisation model.</td></tr>
+<tr><td>F1-CO₂</td><td>Retention after CO₂ cessation or another design that separates treatment history from current forcing before later heat/drought response.</td></tr>
+</tbody></table></div>
+
+<h2 id="programme-state">17. Programme state and closure rule</h2>
+<p>Forest F1 anchor selection is closed for v1.0. The six cases are sufficient to test distinct confounds and should not be expanded merely to search for a positive result. Future forest work should be treated as replication, raw-data upgrade, or explicit reopening of a frozen case.</p>
+<p>Independent evaluator reproducibility remains a desirable future validation step but is not represented as completed. At present the research programme is single-investigator and does not have an external evaluator pool. This is recorded as a limitation rather than simulated through pseudo-independent classifications.</p>
+<p>The planned programme sequence after Forest F1 is a return to Titan under an independently specified T2 atmosphere-plus-surface boundary. Titan T1 remains frozen and cannot be rescued retrospectively by broader boundaries.</p>
+
+<h2 id="conclusion">18. Conclusion</h2>
+<p>Forest F1 applies one unchanged adaptive classifier to six forest systems that display many properties commonly associated with adaptation: persistent organisation, resilience, demographic turnover, structural memory, altered later performance, and long-duration physiological conditioning.</p>
+<p>No completed case currently establishes forest-level adaptive modification. The reason is not uniform failure. Different systems stop at different gates: continuing forcing, absent independent re-exposure, no established differential response, unresolved passive filtering, or a sufficient stored-damage explanation. One particularly promising replicated case remains unexecuted because the required raw data are inaccessible.</p>
+<p>This is therefore a negative and incomplete empirical result set, but not a trivial one. The programme shows that adaptation-like signatures can be decomposed into mechanistically distinct alternatives without changing the framework's core ontology. It also demonstrates that biological sophistication does not automatically entitle a system to an adaptive classification.</p>
+<div class="source-callout"><p><strong>Final statement</strong></p><p>Forest F1 did not show that forests are non-adaptive. It showed that being alive, resilient, history-dependent, structurally persistent, or better-performing after prior stress is not by itself sufficient evidence that the forest system has retained and causally deployed a modified response-generating organisation.</p></div>
+
+<h2 id="appendix-a">Appendix A. Frozen decision record</h2>
+<div class="publication-table-wrap"><table class="publication-table"><thead><tr><th>Decision</th><th>Status</th></tr></thead><tbody>
+<tr><td>Anchor set</td><td>F1-C, F1-F, F1-I, F1-H, F1-FR, F1-CO₂; closed for v1.0.</td></tr>
+<tr><td>Common adaptive sequence</td><td>G1 Δθ → G2 M → G3 ΔF → G4 null survival → G5 causal contribution → G6 forest locus.</td></tr>
+<tr><td>Adaptive gain</td><td>Ineligible unless G1–G6 pass.</td></tr>
+<tr><td>Partial adaptation category</td><td>Not used.</td></tr>
+<tr><td>F1-C</td><td>F1-C-MIN executed; adaptive modification not established.</td></tr>
+<tr><td>F1-F</td><td>Preregistered; unexecuted due to data access.</td></tr>
+<tr><td>F1-I</td><td>Published-summary execution; adaptive modification not established.</td></tr>
+<tr><td>F1-H</td><td>G1/G2 pass; G3 untestable.</td></tr>
+<tr><td>F1-FR</td><td>G1/G2 pass; G3 not established.</td></tr>
+<tr><td>F1-CO₂</td><td>Independent retention not established under continuing CO₂ treatment.</td></tr>
+<tr><td>Overall Forest F1</td><td>No completed case establishes forest-level adaptive modification under current evidence.</td></tr>
+</tbody></table></div>
+
+<h2 id="appendix-b">Appendix B. Data and audit record</h2>
+<p>The programme retains limitations, access failures, and measurement clarifications rather than silently substituting easier endpoints. In F1-C, missing full TLS/PAVD and long-term stand-structure records were separated into MIN and future FULL analyses. In F1-I, generic “woody debris” wording is retained until exact raw-table size classes can be fixed from the accessible schema. F1-H remains a G1/G2 result rather than converting recovery from the initiating hurricane into a later-response endpoint. F1-FR uses “not established” rather than claiming equivalence. F1-CO₂ does not treat duration of exposure as independent retention. F1-F remains unexecuted rather than using published treatment effects as a substitute for the frozen raw-data analysis.</p>
+
+<h2 id="references">References and data provenance</h2>
+<ol>
+<li>Riff Systems. <em>The Adaptive Coherence Framework</em>, v1.1, 17 August 2026. Framework source for the adaptive discriminator, system boundary, coherence dimensions, adaptation locus, temporal horizons, and matched-counterfactual adaptive gain.</li>
+<li>Martius, L. R. et al. (2026). <em>Amazonian trees under long-term drought exposure are more resilient to El Niño extreme.</em> Communications Earth &amp; Environment. <a href="https://www.nature.com/articles/s43247-026-03887-0">https://www.nature.com/articles/s43247-026-03887-0</a>. Minimum analysis data and code: <a href="https://github.com/lionmartius/ecomemory">https://github.com/lionmartius/ecomemory</a>.</li>
+<li>Westlind, D. J. &amp; Kerns, B. K. (2021). <em>Repeated fall prescribed fire in previously thinned Pinus ponderosa increases growth and resistance to other disturbances.</em> Forest Ecology and Management 480:118645. <a href="https://doi.org/10.1016/j.foreco.2020.118645">https://doi.org/10.1016/j.foreco.2020.118645</a>.</li>
+<li>Rustad, L. E. et al. (2020). <em>Experimental approach and initial forest response to a simulated ice storm experiment in a northern hardwood forest.</em> PLOS ONE 15(9):e0239619. <a href="https://doi.org/10.1371/journal.pone.0239619">https://doi.org/10.1371/journal.pone.0239619</a>.</li>
+<li>Fahey, R. T. et al. (2020). <em>Effects of an experimental ice storm on forest canopy structure.</em> Canadian Journal of Forest Research 50(2):136–145. <a href="https://doi.org/10.1139/cjfr-2019-0276">https://doi.org/10.1139/cjfr-2019-0276</a>.</li>
+<li>Barker Plotkin, A., Foster, D., Carlson, J. &amp; Magill, A. (2013). <em>Survivors, not invaders, control forest development following simulated hurricane.</em> Ecology 94(2):414–423. <a href="https://doi.org/10.1890/12-0487.1">https://doi.org/10.1890/12-0487.1</a>.</li>
+<li>Laurance, W. F. et al. (2001). <em>Effects of a strong drought on Amazonian forest fragments and edges.</em> Journal of Tropical Ecology 17(6):771–785. <a href="https://www.cambridge.org/core/journals/journal-of-tropical-ecology/article/abs/effects-of-a-strong-drought-on-amazonian-forest-fragments-and-edges/CBE213E15E7283EBE0760FBD244AEB5F">Cambridge Core article page</a>.</li>
+<li>Gardner, A. et al. (2022). <em>Is photosynthetic enhancement sustained through three years of elevated CO₂ exposure in 175-year-old Quercus robur?</em> Tree Physiology 42(1):130–144. <a href="https://doi.org/10.1093/treephys/tpab090">https://doi.org/10.1093/treephys/tpab090</a>.</li>
+<li><em>Elevated CO₂ buffers negative impacts of heat stress on short-term growth adjustments of 180 year-old Quercus robur.</em> Tree Physiology (2026), article tpag114. <a href="https://doi.org/10.1093/treephys/tpag114">https://doi.org/10.1093/treephys/tpag114</a>.</li>
+</ol>
+
+<section aria-labelledby="forest-disclaimer" class="legal-section">
+<h2 id="forest-disclaimer">Disclaimer &amp; Scope of Application</h2>
+<p>Forest F1 is an empirical application of the Adaptive Coherence Framework (ACF) across six declared forest-system tests. Its conclusions apply to the stated boundaries, candidate organisational variables, source datasets, modelling choices, gate sequence, null hypotheses, validation procedures, and evidential standards used in this programme. They should not be generalised automatically to forests as a biological category, to other ecosystems, or to all possible forms of ecological adaptation.</p>
+<p>The study does <strong>not</strong> establish that forests are non-adaptive, non-living, or incapable of forest-level adaptive modification. It establishes that no completed Forest F1 case presently satisfies the full ACF evidential chain for forest-level adaptive modification under the available evidence. Several cases are explicitly evidence-limited, one is unexecuted because decisive data are inaccessible, and future materially stronger evidence may reopen individual classifications.</p>
+<p>Terms such as “resilience,” “memory,” “acclimation,” “history dependence,” “reorganisation,” and “adaptation” are used according to the definitions and source contexts stated in the manuscript. ACF classification should not be inferred from terminology used in the underlying ecological literature. In particular, a source paper's use of “resilience,” “priming,” “acclimation,” or “resistance” does not itself establish ACF adaptive modification.</p>
+<p>The programme includes secondary and confirmatory analyses of previously published ecological studies. It should not be represented as an outcome-blind preregistration of those original experiments. The frozen element is the ACF gate architecture and case-specific operationalisation used for the present classificatory analysis.</p>
+<p>Future raw-data access, independent replication, evaluator re-application, alternative but preregistered measurement models, or materially improved observations may alter individual evidential assessments. Such work should be documented as replication, sensitivity analysis, or explicit reopening rather than as retrospective modification of the frozen Forest F1 v1.0 result.</p>
+</section>
+<section aria-labelledby="copyright-permitted-use" class="legal-section rights-section">
+<h2 id="copyright-permitted-use">Copyright &amp; Permitted Use</h2>
+<p>© 2026 Tristan J. Radford. All rights reserved.<br/>
+Published by <strong>Riff Systems Ltd</strong> (Company No. 17419314).</p>
+<p>This publication may be read, cited, quoted in reasonable extracts, discussed in academic contexts, and used for non-commercial research, provided that appropriate attribution and citation are given and the work is not misrepresented.</p>
+<h3>Commercial Use</h3>
+<p>Except where permitted by law, commercial reproduction, republication, adaptation of protected expression, incorporation of protected material into software, products or services, or use of substantial portions of this work for commercial AI or machine-learning training, fine-tuning, dataset construction, or similar commercial exploitation requires prior written permission from <strong>Riff Systems Ltd</strong>.</p>
+<h3>Rights Administration</h3>
+<p>Copyright remains with <strong>Tristan J. Radford</strong>. <strong>Riff Systems Ltd</strong> is the publisher and administers commercial licensing and permissions for this publication.</p>
+<p>Nothing in this notice limits statutory copyright exceptions or other uses permitted by applicable law. No permission is implied for use of Riff Systems trade marks, logos, confidential material, or unpublished research.</p>
+</section>
+</article>
+<footer class="report-footer">
+<span><strong>Forest F1</strong> · Tristan Radford — Cross-Domain Cognitive Systems Architect · v1.0</span>
+<span>Riff Systems Ltd · riffsystems.org · © 2026 Tristan J. Radford</span>
+</footer>
+
+</main>
+</body>
+</html>

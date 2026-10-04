@@ -1,2 +1,22 @@
+# Riff Systems public research discovery policy
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Search discovery is allowed; OpenAI training crawler is not.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: *
 Allow: /
+
+Sitemap: https://riffsystems.org/sitemap.xml
